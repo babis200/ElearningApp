@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElearningData.Interfaces
+namespace ElearningModels.Interfaces
 {
-    internal interface IQuestion
+    public interface IQuestion
     {
 
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElearningData.Models
+namespace ElearningModels.Models
 {
-    internal class StudentModel
+    public class StudentModel
     {
         public int Id { get; set; }
 

@@ -1,3 +1,5 @@
+using ElearningModels.Models;
+
 namespace ElearningApp
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace ElearningApp
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new MainMenu());
+            Application.Run(new CourseView(new CourseModel()));
         }
     }
 }

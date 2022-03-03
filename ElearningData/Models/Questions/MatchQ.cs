@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ElearningData.Interfaces;
+using ElearningModels.Interfaces;
 
-namespace ElearningData.Models.Questions
+namespace ElearningModels.Models.Questions
 {
-    internal class MatchQ : IQuestion
+    public class MatchQ : IQuestion
     {
         //First answer binds with first choice...
 

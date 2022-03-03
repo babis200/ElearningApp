@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElearningApp", "ElearningApp\ElearningApp.csproj", "{9DDE470D-C0AB-43CA-A6F4-721D605F591C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5FD97D94-8F26-4682-BCC4-A8D1029101FD} = {5FD97D94-8F26-4682-BCC4-A8D1029101FD}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElearningModels", "ElearningData\ElearningModels.csproj", "{5FD97D94-8F26-4682-BCC4-A8D1029101FD}"
 EndProject

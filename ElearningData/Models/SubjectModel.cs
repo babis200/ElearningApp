@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElearningData.Models
+namespace ElearningModels.Models
 {
-    internal class SubjectModel
+    public class SubjectModel
     {
         [Key]
         public int Id { get; set; }

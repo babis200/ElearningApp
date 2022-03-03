@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using ElearningData.Interfaces;
+using ElearningModels.Interfaces;
 
-namespace ElearningData.Models
+namespace ElearningModels.Models
 {
-    internal class ExamModel
+    public class ExamModel
     {
         public int Id { get; set; }
 
