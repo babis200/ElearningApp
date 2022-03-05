@@ -1,0 +1,103 @@
+{
+  "main": {
+    "id": "59195a31f78f26ad",
+    "type": "split",
+    "children": [
+      {
+        "id": "b9a9a594c25022a5",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Φόρμα ερώτησης.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b5f70b33c53def0f",
+    "type": "split",
+    "children": [
+      {
+        "id": "fdfd612d6c44c728",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7e1a8121c5f1ff14",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "9bd077034783c1ae",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "04ad40e97a3b2c99",
+    "type": "split",
+    "children": [
+      {
+        "id": "eaf30c3316890712",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "15939bc0b751a98a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Φόρμα ερώτησης.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "b9a9a594c25022a5",
+  "lastOpenFiles": [
+    "Φόρμα ερώτησης.md",
+    "Φόρμες/Φόρμα δημιουργίας ενημέρωσης διαγωνίσματος.md",
+    "Φόρμες/Φόρμα κεφαλαίου.md",
+    "Φόρμες/Φόρμα εξέτασης διαγωνίσματος.md",
+    "Requirements.md",
+    "Solution Architecture.md",
+    "Φόρμες/Φόρμα μαθήματος.md",
+    "Φόρμες/Κεντρικό MENU.md",
+    "Φόρμα δημιουργίας/ενημέρωσης διαγωνίσματος.md",
+    "Entities/Κεφάλαιο.md"
+  ]
+}
