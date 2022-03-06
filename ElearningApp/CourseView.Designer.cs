@@ -28,188 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.courseNameLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialDataTable1 = new MaterialSkin2DotNet.Controls.MaterialDataTable();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.deleteButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.updateButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.viewButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.addButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.teachersLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.courseSubjectsListView = new MaterialSkin2DotNet.Controls.MaterialListView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.descriptionLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.courseExamListView = new MaterialSkin2DotNet.Controls.MaterialListView();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.materialDataTable1)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.50882F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.49118F));
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 64);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.2376F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.76241F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 383);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // courseNameLabel
+            // 
+            this.courseNameLabel.AutoSize = true;
+            this.courseNameLabel.Depth = 0;
+            this.courseNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.courseNameLabel.Location = new System.Drawing.Point(23, 12);
+            this.courseNameLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.courseNameLabel.Name = "courseNameLabel";
+            this.courseNameLabel.Size = new System.Drawing.Size(96, 19);
+            this.courseNameLabel.TabIndex = 0;
+            this.courseNameLabel.Text = "Course Name";
+            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.materialDataTable1);
+            this.panel1.Controls.Add(this.teachersLabel);
+            this.panel1.Controls.Add(this.courseNameLabel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(665, 377);
-            this.panel1.TabIndex = 0;
-            // 
-            // materialDataTable1
-            // 
-            this.materialDataTable1.AllowUserToAddRows = false;
-            this.materialDataTable1.AllowUserToDeleteRows = false;
-            this.materialDataTable1.AllowUserToOrderColumns = true;
-            this.materialDataTable1.AllowUserToResizeRows = false;
-            this.materialDataTable1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.materialDataTable1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialDataTable1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialDataTable1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.materialDataTable1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.materialDataTable1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.materialDataTable1.ColumnHeadersHeight = 56;
-            this.materialDataTable1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.materialDataTable1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.CourseName,
-            this.Teacher});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.materialDataTable1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.materialDataTable1.Depth = 0;
-            this.materialDataTable1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialDataTable1.EnableHeadersVisualStyles = false;
-            this.materialDataTable1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialDataTable1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.materialDataTable1.Location = new System.Drawing.Point(0, 0);
-            this.materialDataTable1.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialDataTable1.Name = "materialDataTable1";
-            this.materialDataTable1.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.materialDataTable1.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.materialDataTable1.RowHeadersVisible = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialDataTable1.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.materialDataTable1.RowTemplate.Height = 52;
-            this.materialDataTable1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.materialDataTable1.ShowVerticalScroll = false;
-            this.materialDataTable1.Size = new System.Drawing.Size(665, 377);
-            this.materialDataTable1.TabIndex = 0;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Κωδικός";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // CourseName
-            // 
-            this.CourseName.HeaderText = "Όνομα";
-            this.CourseName.Name = "CourseName";
-            this.CourseName.ReadOnly = true;
-            // 
-            // Teacher
-            // 
-            this.Teacher.HeaderText = "Καθηγητής";
-            this.Teacher.Name = "Teacher";
-            this.Teacher.ReadOnly = true;
+            this.panel1.Size = new System.Drawing.Size(788, 83);
+            this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.deleteButton);
-            this.panel2.Controls.Add(this.updateButton);
-            this.panel2.Controls.Add(this.viewButton);
-            this.panel2.Controls.Add(this.addButton);
+            this.panel2.Controls.Add(this.tableLayoutPanel2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(674, 3);
+            this.panel2.Location = new System.Drawing.Point(3, 92);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(117, 377);
-            this.panel2.TabIndex = 1;
+            this.panel2.Size = new System.Drawing.Size(788, 288);
+            this.panel2.TabIndex = 2;
             // 
-            // deleteButton
+            // teachersLabel
             // 
-            this.deleteButton.Depth = 0;
-            this.deleteButton.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
-            this.deleteButton.Location = new System.Drawing.Point(33, 205);
-            this.deleteButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(56, 56);
-            this.deleteButton.TabIndex = 3;
-            this.deleteButton.Text = "materialFloatingActionButton4";
-            this.deleteButton.UseVisualStyleBackColor = true;
+            this.teachersLabel.AutoSize = true;
+            this.teachersLabel.Depth = 0;
+            this.teachersLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.teachersLabel.Location = new System.Drawing.Point(23, 55);
+            this.teachersLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.teachersLabel.Name = "teachersLabel";
+            this.teachersLabel.Size = new System.Drawing.Size(130, 19);
+            this.teachersLabel.TabIndex = 1;
+            this.teachersLabel.Text = "teacher1, teacher2";
             // 
-            // updateButton
+            // tableLayoutPanel2
             // 
-            this.updateButton.Depth = 0;
-            this.updateButton.Icon = global::ElearningApp.Properties.Resources.icons8_edit_48;
-            this.updateButton.Location = new System.Drawing.Point(33, 143);
-            this.updateButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.updateButton.Name = "updateButton";
-            this.updateButton.Size = new System.Drawing.Size(56, 56);
-            this.updateButton.TabIndex = 2;
-            this.updateButton.Text = "materialFloatingActionButton3";
-            this.updateButton.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.courseSubjectsListView, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(788, 288);
+            this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // viewButton
+            // courseSubjectsListView
             // 
-            this.viewButton.Depth = 0;
-            this.viewButton.Icon = global::ElearningApp.Properties.Resources.icons8_view_48;
-            this.viewButton.Location = new System.Drawing.Point(33, 81);
-            this.viewButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.viewButton.Name = "viewButton";
-            this.viewButton.Size = new System.Drawing.Size(56, 56);
-            this.viewButton.TabIndex = 1;
-            this.viewButton.Text = "materialFloatingActionButton2";
-            this.viewButton.UseVisualStyleBackColor = true;
+            this.courseSubjectsListView.AutoSizeTable = false;
+            this.courseSubjectsListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.courseSubjectsListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.courseSubjectsListView.Depth = 0;
+            this.courseSubjectsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.courseSubjectsListView.FullRowSelect = true;
+            this.courseSubjectsListView.Location = new System.Drawing.Point(3, 3);
+            this.courseSubjectsListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.courseSubjectsListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.courseSubjectsListView.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.courseSubjectsListView.Name = "courseSubjectsListView";
+            this.courseSubjectsListView.OwnerDraw = true;
+            this.courseSubjectsListView.Size = new System.Drawing.Size(388, 282);
+            this.courseSubjectsListView.TabIndex = 0;
+            this.courseSubjectsListView.UseCompatibleStateImageBehavior = false;
+            this.courseSubjectsListView.View = System.Windows.Forms.View.List;
             // 
-            // addButton
+            // tableLayoutPanel3
             // 
-            this.addButton.Depth = 0;
-            this.addButton.Icon = global::ElearningApp.Properties.Resources.icons8_add_481;
-            this.addButton.Location = new System.Drawing.Point(33, 19);
-            this.addButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(56, 56);
-            this.addButton.TabIndex = 0;
-            this.addButton.Text = "materialFloatingActionButton1";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.courseExamListView, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(397, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 282);
+            this.tableLayoutPanel3.TabIndex = 1;
+            // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Depth = 0;
+            this.descriptionLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.descriptionLabel.Location = new System.Drawing.Point(25, 30);
+            this.descriptionLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(79, 19);
+            this.descriptionLabel.TabIndex = 0;
+            this.descriptionLabel.Text = "description";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.descriptionLabel);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(382, 135);
+            this.panel3.TabIndex = 0;
+            // 
+            // courseExamListView
+            // 
+            this.courseExamListView.AutoSizeTable = false;
+            this.courseExamListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.courseExamListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.courseExamListView.Depth = 0;
+            this.courseExamListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.courseExamListView.FullRowSelect = true;
+            this.courseExamListView.Location = new System.Drawing.Point(3, 144);
+            this.courseExamListView.MinimumSize = new System.Drawing.Size(200, 100);
+            this.courseExamListView.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.courseExamListView.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.courseExamListView.Name = "courseExamListView";
+            this.courseExamListView.OwnerDraw = true;
+            this.courseExamListView.Size = new System.Drawing.Size(382, 135);
+            this.courseExamListView.TabIndex = 1;
+            this.courseExamListView.UseCompatibleStateImageBehavior = false;
+            this.courseExamListView.View = System.Windows.Forms.View.Details;
             // 
             // CourseView
             // 
@@ -224,8 +208,12 @@
             this.Load += new System.EventHandler(this.CourseForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.materialDataTable1)).EndInit();
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -233,15 +221,15 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
         private Panel panel2;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton deleteButton;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton updateButton;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton viewButton;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton addButton;
-        private MaterialSkin2DotNet.Controls.MaterialDataTable materialDataTable1;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn CourseName;
-        private DataGridViewTextBoxColumn Teacher;
+        private Panel panel1;
+        private MaterialSkin2DotNet.Controls.MaterialLabel teachersLabel;
+        private MaterialSkin2DotNet.Controls.MaterialLabel courseNameLabel;
+        private TableLayoutPanel tableLayoutPanel2;
+        private MaterialSkin2DotNet.Controls.MaterialListView courseSubjectsListView;
+        private TableLayoutPanel tableLayoutPanel3;
+        private MaterialSkin2DotNet.Controls.MaterialListView courseExamListView;
+        private Panel panel3;
+        private MaterialSkin2DotNet.Controls.MaterialLabel descriptionLabel;
     }
 }

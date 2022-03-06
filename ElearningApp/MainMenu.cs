@@ -13,10 +13,6 @@ namespace ElearningApp
         }
 
 
-        private void materialButton1_Click_1(object sender, EventArgs e)
-{
-            var vatView = new CourseView(_serviceCollection);
-            vatView.Show();
-        }
+       
     }
 }

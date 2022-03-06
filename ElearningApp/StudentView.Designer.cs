@@ -1,14 +1,14 @@
 ﻿namespace ElearningApp
 {
-    partial class MainMenu
+    partial class StudentView
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,8 +23,8 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -34,6 +34,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.coursesListView = new MaterialSkin2DotNet.Controls.MaterialListView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nameLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -52,10 +53,11 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.49347F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 82.50653F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 383);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.nameLabel);
             this.panel1.Controls.Add(this.profileButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -73,7 +75,7 @@
             this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.profileButton.Icon = global::ElearningApp.Properties.Resources.icons8_male_user_96;
             this.profileButton.Image = global::ElearningApp.Properties.Resources.icons8_male_user_48;
-            this.profileButton.Location = new System.Drawing.Point(715, 2);
+            this.profileButton.Location = new System.Drawing.Point(1303, -18);
             this.profileButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.profileButton.Name = "profileButton";
             this.profileButton.Size = new System.Drawing.Size(60, 58);
@@ -112,7 +114,7 @@
             this.coursesListView.Size = new System.Drawing.Size(406, 305);
             this.coursesListView.TabIndex = 0;
             this.coursesListView.UseCompatibleStateImageBehavior = false;
-            this.coursesListView.View = System.Windows.Forms.View.Tile;
+            this.coursesListView.View = System.Windows.Forms.View.Details;
             // 
             // panel2
             // 
@@ -124,16 +126,29 @@
             this.panel2.Size = new System.Drawing.Size(370, 305);
             this.panel2.TabIndex = 1;
             // 
-            // MainMenu
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Depth = 0;
+            this.nameLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nameLabel.Location = new System.Drawing.Point(19, 22);
+            this.nameLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(69, 19);
+            this.nameLabel.TabIndex = 1;
+            this.nameLabel.Text = "Jhon Doe";
+            // 
+            // StudentView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "MainMenu";
-            this.Text = "Dashboard";
+            this.Name = "StudentView";
+            this.Text = "StudentView";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -143,6 +158,7 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
+        private MaterialSkin2DotNet.Controls.MaterialLabel nameLabel;
         private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton profileButton;
         private TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin2DotNet.Controls.MaterialListView coursesListView;
