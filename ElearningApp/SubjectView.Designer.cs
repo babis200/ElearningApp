@@ -190,7 +190,6 @@
             this.materialFloatingActionButton1.TabIndex = 0;
             this.materialFloatingActionButton1.Text = "materialFloatingActionButton1";
             this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
-            this.materialFloatingActionButton1.Click += new System.EventHandler(this.materialFloatingActionButton1_Click);
             // 
             // materialFloatingActionButton2
             // 
