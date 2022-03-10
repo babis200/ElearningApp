@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using MaterialSkin2DotNet.Controls;
 
+using MongoDB.Driver;
+
 namespace ElearningApp
 {
     public partial class LoginView : MaterialForm
@@ -20,14 +22,36 @@ namespace ElearningApp
             loginButton.ForeColor = Color.Green;
         }
 
+        private void LoginView_Load(object sender, EventArgs e)
+        {
+            //TODO - connect to users db (mongoDB)
+            var client = new MongoClient("mongodb+srv://<username>:<password>@<cluster-address>/test?w=majority");
+            var database = client.GetDatabase("test");
+
+
+            //initialize service collection
+        }
+
         private void loginButton_Click(object sender, EventArgs e)
         {
+            //TODO - authenticate user
 
+            //TODO - open main menu
         }
 
         private void signupButton_Click(object sender, EventArgs e)
         {
-
+            if (!ViewTools.IsFormOpened<CreateUserView>())
+            {
+                var cardView = new CreateUserView(_serviceCollection);
+                cardView.Show();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<CreateUserView>().Focus();
+            }
         }
+
+        
     }
 }

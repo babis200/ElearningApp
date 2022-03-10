@@ -150,6 +150,7 @@
             this.PrimaryColor = MaterialSkin2DotNet.Primary.Green500;
             this.PrimaryDarkColor = MaterialSkin2DotNet.Primary.Green900;
             this.Text = "LoginView";
+            this.Load += new System.EventHandler(this.LoginView_Load);
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
             this.ResumeLayout(false);

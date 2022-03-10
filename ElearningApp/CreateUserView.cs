@@ -12,9 +12,9 @@ using MaterialSkin2DotNet.Controls;
 
 namespace ElearningApp
 {
-    public partial class CreateUser : MaterialForm
+    public partial class CreateUserView : MaterialForm
     {
-        public CreateUser()
+        public CreateUserView()
         {
             InitializeComponent();
         }

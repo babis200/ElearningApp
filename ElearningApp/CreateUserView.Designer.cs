@@ -1,6 +1,6 @@
 ﻿namespace ElearningApp
 {
-    partial class CreateUser
+    partial class CreateUserView
     {
         /// <summary>
         /// Required designer variable.
@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.materialCard1 = new MaterialSkin2DotNet.Controls.MaterialCard();
+            this.roleComboBox = new MaterialSkin2DotNet.Controls.MaterialComboBox();
+            this.emailTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
             this.passwordTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
             this.usernameTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
             this.createButton = new MaterialSkin2DotNet.Controls.MaterialButton();
-            this.emailTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
-            this.roleComboBox = new MaterialSkin2DotNet.Controls.MaterialComboBox();
             this.materialCard1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,46 @@
             this.materialCard1.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard1.Size = new System.Drawing.Size(326, 401);
             this.materialCard1.TabIndex = 0;
+            // 
+            // roleComboBox
+            // 
+            this.roleComboBox.AutoResize = false;
+            this.roleComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.roleComboBox.Depth = 0;
+            this.roleComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.roleComboBox.DropDownHeight = 174;
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.roleComboBox.DropDownWidth = 121;
+            this.roleComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.roleComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.roleComboBox.FormattingEnabled = true;
+            this.roleComboBox.Hint = "Role";
+            this.roleComboBox.IntegralHeight = false;
+            this.roleComboBox.ItemHeight = 43;
+            this.roleComboBox.Location = new System.Drawing.Point(43, 228);
+            this.roleComboBox.MaxDropDownItems = 4;
+            this.roleComboBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.roleComboBox.Name = "roleComboBox";
+            this.roleComboBox.Size = new System.Drawing.Size(224, 49);
+            this.roleComboBox.StartIndex = 0;
+            this.roleComboBox.TabIndex = 4;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.emailTextBox.Depth = 0;
+            this.emailTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.emailTextBox.Hint = "Email";
+            this.emailTextBox.LeadingIcon = null;
+            this.emailTextBox.Location = new System.Drawing.Point(43, 163);
+            this.emailTextBox.MaxLength = 50;
+            this.emailTextBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.emailTextBox.Multiline = false;
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(224, 50);
+            this.emailTextBox.TabIndex = 3;
+            this.emailTextBox.Text = "";
+            this.emailTextBox.TrailingIcon = null;
             // 
             // passwordTextBox
             // 
@@ -97,56 +137,16 @@
             this.createButton.Depth = 0;
             this.createButton.HighEmphasis = true;
             this.createButton.Icon = null;
-            this.createButton.Location = new System.Drawing.Point(76, 345);
+            this.createButton.Location = new System.Drawing.Point(118, 317);
             this.createButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.createButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.createButton.Name = "createButton";
-            this.createButton.Size = new System.Drawing.Size(158, 36);
+            this.createButton.Size = new System.Drawing.Size(76, 36);
             this.createButton.TabIndex = 0;
             this.createButton.Text = "Create";
             this.createButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
             this.createButton.UseAccentColor = false;
             this.createButton.UseVisualStyleBackColor = true;
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.emailTextBox.Depth = 0;
-            this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.emailTextBox.Hint = "Email";
-            this.emailTextBox.LeadingIcon = null;
-            this.emailTextBox.Location = new System.Drawing.Point(43, 163);
-            this.emailTextBox.MaxLength = 50;
-            this.emailTextBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
-            this.emailTextBox.Multiline = false;
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(224, 50);
-            this.emailTextBox.TabIndex = 3;
-            this.emailTextBox.Text = "";
-            this.emailTextBox.TrailingIcon = null;
-            // 
-            // roleComboBox
-            // 
-            this.roleComboBox.AutoResize = false;
-            this.roleComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.roleComboBox.Depth = 0;
-            this.roleComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.roleComboBox.DropDownHeight = 174;
-            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.roleComboBox.DropDownWidth = 121;
-            this.roleComboBox.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.roleComboBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.roleComboBox.FormattingEnabled = true;
-            this.roleComboBox.Hint = "Role";
-            this.roleComboBox.IntegralHeight = false;
-            this.roleComboBox.ItemHeight = 43;
-            this.roleComboBox.Location = new System.Drawing.Point(43, 228);
-            this.roleComboBox.MaxDropDownItems = 4;
-            this.roleComboBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
-            this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(224, 49);
-            this.roleComboBox.StartIndex = 0;
-            this.roleComboBox.TabIndex = 4;
             // 
             // CreateUser
             // 
