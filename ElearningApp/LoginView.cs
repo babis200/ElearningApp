@@ -12,6 +12,8 @@ using MaterialSkin2DotNet.Controls;
 
 using MongoDB.Driver;
 
+using RestSharp;
+
 namespace ElearningApp
 {
     public partial class LoginView : MaterialForm
@@ -29,7 +31,11 @@ namespace ElearningApp
             var database = client.GetDatabase("test");
 
 
-            //initialize service collection
+            //initialize authentication service
+            var authClient = new RestClient("localhost");
+            var request = new RestRequest("api/item/", Method.Get);
+            var queryResult = client.Execute<List<Items>>(request).Data;
+
         }
 
         private void loginButton_Click(object sender, EventArgs e)

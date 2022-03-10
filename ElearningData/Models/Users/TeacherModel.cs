@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ElearningModels.Models
+using ElearningModels.Interfaces;
+
+namespace ElearningModels.Models.Users
 {
-    public class StudentModel
+    public class TeacherModel : IUser
     {
         public int Id { get; set; }
-
+       
         public string Name { get; set; }
 
         public List<CourseModel> Courses { get; set; }
 
-        public int Grades { get; set; }
+
+        public IUser.Role role = IUser.Role.Teacher;
+
     }
 }

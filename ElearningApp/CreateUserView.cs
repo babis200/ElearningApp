@@ -18,5 +18,14 @@ namespace ElearningApp
         {
             InitializeComponent();
         }
+
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            //only teachers and admins can create students
+
+            //only admins can create teachers
+
+            //students cant create new users
+        }
     }
 }

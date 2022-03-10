@@ -147,14 +147,15 @@
             this.createButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
             this.createButton.UseAccentColor = false;
             this.createButton.UseVisualStyleBackColor = true;
+            this.createButton.Click += new System.EventHandler(this.createButton_Click);
             // 
-            // CreateUser
+            // CreateUserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 468);
             this.Controls.Add(this.materialCard1);
-            this.Name = "CreateUser";
+            this.Name = "CreateUserView";
             this.Text = "CreateUser";
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
