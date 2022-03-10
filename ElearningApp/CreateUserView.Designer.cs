@@ -156,6 +156,8 @@
             this.ClientSize = new System.Drawing.Size(332, 468);
             this.Controls.Add(this.materialCard1);
             this.Name = "CreateUserView";
+            this.PrimaryColor = MaterialSkin2DotNet.Primary.LightGreen900;
+            this.PrimaryDarkColor = MaterialSkin2DotNet.Primary.LightGreen900;
             this.Text = "CreateUser";
             this.materialCard1.ResumeLayout(false);
             this.materialCard1.PerformLayout();
