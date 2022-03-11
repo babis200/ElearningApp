@@ -18,6 +18,7 @@ namespace ElearningModels.Interfaces
 
         public enum Role
         {
+            Guest,
             Student,
             Teacher,
             Admin

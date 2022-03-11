@@ -10,8 +10,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using ElearningApp.Properties;
+
 using ElearningModels.Interfaces;
 using MaterialSkin2DotNet.Controls;
+using Microsoft.VisualBasic;
+
+using MongoDB.Bson;
 using MongoDB.Driver;
 using RestSharp;
 using static ElearningApp.AppEnums;
@@ -31,21 +36,19 @@ namespace ElearningApp
         }
 
         private void LoginView_Load(object sender, EventArgs e)
-        {
-            //TODO - connect to users db (mongoDB)
-            var client = new MongoClient("mongodb+srv://<username>:<password>@<cluster-address>/test?w=majority");
-            var database = client.GetDatabase("test");
+{
+            MongoClient dbClient = new MongoClient(@"mongodb://developer:deve-1992@localhost:27017/");
 
-            //initialize authentication service
+            var dbList = dbClient.ListDatabases().ToList();
+
+            var db = dbClient.GetDatabase("elearning").GetCollection<BsonDocument>("users");
            
-
-
         }
 
         private async void loginButton_Click(object sender, EventArgs e)
         {
-            //TODO - authenticate user
-            var request = new RestRequest()
+            //TODO - authenticate user with authentication microservice
+           /* var request = new RestRequest()
                .AddQueryParameter("username", usernameTextBox.Text)
                .AddQueryParameter("password", passwordTextBox.Text);
             var response = await _authClient.PostAsync<Result<IUser, string>>(request);
@@ -53,10 +56,19 @@ namespace ElearningApp
             {
                 MessageBox.Show(response.Err, "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            //TODO - open main menu
-            if (!ViewTools.IsFormOpened<CreateUserView>())
+*/
+            ElearningModels.Models.Users.AdminModel admin = new ElearningModels.Models.Users.AdminModel()
             {
-                var cardView = new MainMenu(response.Ok);
+                Id = 1,
+                Username = usernameTextBox.Text,
+                Password = passwordTextBox.Text,
+                Icon = @"C:\Users\mpampis\Desktop\emultisoftlogo-e1573645677182.png",
+            };
+
+            //TODO - open main menu
+            if (!ViewTools.IsFormOpened<MainMenu>())
+            {
+                var cardView = new MainMenu(admin);
                 cardView.Show();
             }
             else

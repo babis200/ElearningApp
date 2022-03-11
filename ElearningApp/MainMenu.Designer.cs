@@ -79,6 +79,7 @@
             this.profileButton.Size = new System.Drawing.Size(60, 58);
             this.profileButton.TabIndex = 0;
             this.profileButton.UseVisualStyleBackColor = false;
+            this.profileButton.Click += new System.EventHandler(this.profileButton_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -109,19 +110,19 @@
             this.coursesListView.MouseState = MaterialSkin2DotNet.MouseState.OUT;
             this.coursesListView.Name = "coursesListView";
             this.coursesListView.OwnerDraw = true;
-            this.coursesListView.Size = new System.Drawing.Size(406, 305);
+            this.coursesListView.Size = new System.Drawing.Size(405, 305);
             this.coursesListView.TabIndex = 0;
             this.coursesListView.UseCompatibleStateImageBehavior = false;
-            this.coursesListView.View = System.Windows.Forms.View.Tile;
+            this.coursesListView.View = System.Windows.Forms.View.Details;
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ElearningApp.Properties.Resources.icons8_question_mark_96;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(415, 3);
+            this.panel2.Location = new System.Drawing.Point(414, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(370, 305);
+            this.panel2.Size = new System.Drawing.Size(371, 305);
             this.panel2.TabIndex = 1;
             // 
             // MainMenu

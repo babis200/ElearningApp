@@ -1,6 +1,6 @@
 ﻿namespace ElearningApp
 {
-    partial class StudentView
+    partial class UserView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.signupButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.nameLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.profileButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.coursesListView = new MaterialSkin2DotNet.Controls.MaterialListView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.nameLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.signupButton);
             this.panel1.Controls.Add(this.nameLabel);
             this.panel1.Controls.Add(this.profileButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,6 +66,40 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(788, 60);
             this.panel1.TabIndex = 1;
+            // 
+            // signupButton
+            // 
+            this.signupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.signupButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.signupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.signupButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.signupButton.Depth = 0;
+            this.signupButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.signupButton.HighEmphasis = true;
+            this.signupButton.Icon = null;
+            this.signupButton.Location = new System.Drawing.Point(647, 12);
+            this.signupButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.signupButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.signupButton.Name = "signupButton";
+            this.signupButton.Size = new System.Drawing.Size(124, 36);
+            this.signupButton.TabIndex = 4;
+            this.signupButton.Text = "Create Users";
+            this.signupButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Outlined;
+            this.signupButton.UseAccentColor = false;
+            this.signupButton.UseVisualStyleBackColor = false;
+            this.signupButton.Click += new System.EventHandler(this.signupButton_Click);
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Depth = 0;
+            this.nameLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.nameLabel.Location = new System.Drawing.Point(19, 22);
+            this.nameLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(69, 19);
+            this.nameLabel.TabIndex = 1;
+            this.nameLabel.Text = "Jhon Doe";
             // 
             // profileButton
             // 
@@ -111,7 +147,7 @@
             this.coursesListView.MouseState = MaterialSkin2DotNet.MouseState.OUT;
             this.coursesListView.Name = "coursesListView";
             this.coursesListView.OwnerDraw = true;
-            this.coursesListView.Size = new System.Drawing.Size(406, 305);
+            this.coursesListView.Size = new System.Drawing.Size(405, 305);
             this.coursesListView.TabIndex = 0;
             this.coursesListView.UseCompatibleStateImageBehavior = false;
             this.coursesListView.View = System.Windows.Forms.View.Details;
@@ -121,31 +157,19 @@
             this.panel2.BackgroundImage = global::ElearningApp.Properties.Resources.icons8_question_mark_96;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(415, 3);
+            this.panel2.Location = new System.Drawing.Point(414, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(370, 305);
+            this.panel2.Size = new System.Drawing.Size(371, 305);
             this.panel2.TabIndex = 1;
             // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Depth = 0;
-            this.nameLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.nameLabel.Location = new System.Drawing.Point(19, 22);
-            this.nameLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(69, 19);
-            this.nameLabel.TabIndex = 1;
-            this.nameLabel.Text = "Jhon Doe";
-            // 
-            // StudentView
+            // UserView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "StudentView";
-            this.Text = "StudentView";
+            this.Name = "UserView";
+            this.Text = "UserView";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -163,5 +187,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private MaterialSkin2DotNet.Controls.MaterialListView coursesListView;
         private Panel panel2;
+        private MaterialSkin2DotNet.Controls.MaterialButton signupButton;
     }
 }

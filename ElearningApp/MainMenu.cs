@@ -22,8 +22,17 @@ namespace ElearningApp
 
         }
 
-
-
-       
+        private void profileButton_Click(object sender, EventArgs e)
+        {
+            if (!ViewTools.IsFormOpened<UserView>())
+            {
+                var userView = new UserView(_user);
+                userView.Show();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<UserView>().Focus();
+            }
+        }
     }
 }
