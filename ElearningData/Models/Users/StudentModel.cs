@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 using ElearningModels.Interfaces;
 
+using MongoDB.Bson;
+
 namespace ElearningModels.Models
 {
     public class StudentModel : IUser
     {
-        public int Id { get; set; }
+        public ObjectId Id { get; set; }
 
         public string Username { get; set; }
 

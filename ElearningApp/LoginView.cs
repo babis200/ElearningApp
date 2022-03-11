@@ -27,6 +27,8 @@ namespace ElearningApp
     {
         public RestClient _authClient { get; set; }
 
+        public MongoClient _dbClient { get; set; }
+
         public LoginView(RestClient authClient)
         {
             InitializeComponent();
@@ -41,8 +43,8 @@ namespace ElearningApp
 
             var dbList = dbClient.ListDatabases().ToList();
 
-            var db = dbClient.GetDatabase("elearning").GetCollection<BsonDocument>("users");
-           
+            _dbClient = dbClient;
+
         }
 
         private async void loginButton_Click(object sender, EventArgs e)
@@ -59,11 +61,15 @@ namespace ElearningApp
 */
             ElearningModels.Models.Users.AdminModel admin = new ElearningModels.Models.Users.AdminModel()
             {
-                Id = 1,
+                Id = ObjectId.GenerateNewId(),
                 Username = usernameTextBox.Text,
                 Password = passwordTextBox.Text,
                 Icon = @"C:\Users\mpampis\Desktop\emultisoftlogo-e1573645677182.png",
             };
+
+            //_dbClient.GetDatabase("elearning").CreateCollection("users");
+            _dbClient.GetDatabase("elearning").GetCollection<IUser>("users").InsertOne(admin);
+            var user = _dbClient.GetDatabase("elearning").GetCollection<IUser>("users").Find<IUser>(_ => true).ToList();
 
             //TODO - open main menu
             if (!ViewTools.IsFormOpened<MainMenu>())
