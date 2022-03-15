@@ -10,6 +10,8 @@ namespace ElearningModels.Models.Questions
 {
     public class TrueFalseQModel : IQuestion
     {
+        public string Question { get; set; }
 
+        public bool Answer { get; set; }
     }
 }
