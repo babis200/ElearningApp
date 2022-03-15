@@ -8,10 +8,8 @@ using ElearningModels.Interfaces;
 
 namespace ElearningModels.Models.Questions
 {
-    public class MultipleChoiceQ : IQuestion
+    public class TrueFalseQModel : IQuestion
     {
-        public string Question { get; set; }
 
-        public List<string> Choices { get; set; }
     }
 }

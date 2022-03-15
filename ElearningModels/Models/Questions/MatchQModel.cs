@@ -8,10 +8,12 @@ using ElearningModels.Interfaces;
 
 namespace ElearningModels.Models.Questions
 {
-    public class FreeFormQ : IQuestion
+    public class MatchQModel : IQuestion
     {
-        public string Question { get; set; }
+        //First answer binds with first choice...
 
-        public string Answer { get; set; }
+        List<string> Choices { get; set; }
+        
+        List<string> Answers { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace ElearningApp
 
             //Must have a running docker container with mongoDB bound to port 27888
             //docker run --name mongo-on-docker -d -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=developer -e MONGO_INITDB_ROOT_PASSWORD=deve-1992 mongo
-            var authClient = new RestClient("https://fb.com");
+            var authClient = new RestClient("http://localhost/8000");
 
             Application.Run(new LoginView(authClient));
         }
