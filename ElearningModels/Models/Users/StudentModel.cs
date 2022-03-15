@@ -8,7 +8,7 @@ using ElearningModels.Interfaces;
 
 using MongoDB.Bson;
 
-namespace ElearningModels.Models
+namespace ElearningModels.Models.Users
 {
     public class StudentModel : IUser
     {
