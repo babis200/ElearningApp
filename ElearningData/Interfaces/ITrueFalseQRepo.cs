@@ -3,7 +3,7 @@ using ElearningModels.Models.Questions;
 
 namespace ElearningData.Interfaces
 {
-    internal interface ITrueFalseRepo
+    internal interface ITrueFalseQRepo
     {
         string Add(TrueFalseQModel question);
 

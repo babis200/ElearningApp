@@ -1,21 +1,23 @@
 ﻿using ElearningData.Interfaces;
 
 using ElearningModels.Models.Questions;
+using ElearningModels.Models.Users;
+using Microsoft.EntityFrameworkCore;
 
 namespace ElearningData.MySQL
 {
-    public class MultipleChoiceQDB : IMultipleChoiceQRepo
+    public class TrueFalseQDB : ITrueFalseQRepo
     {
         ElearningDBContext _context;
 
-        public MultipleChoiceQDB(ElearningDBContext context)
+        public TrueFalseQDB(ElearningDBContext context)
         {
             _context = context;
         }
 
         //Η μέθοδος που προσθέτει ένα αντικείμενο στη βάση και επιστρέφει
         //ένα κενό κείμενο αν όλα πάνε καλά ή ένα κείμενο σφάλματος αν υπάρξει πρόβλημα
-        public string Add(MultipleChoiceQModel question)
+        public string Add(TrueFalseQModel question)
         {
             string error = string.Empty;
             var existed = Get(question.Id);
@@ -25,7 +27,7 @@ namespace ElearningData.MySQL
             }
             try
             {
-                _context.MultipleChoiceQs.Add(question);
+                _context.TrueFalseQs.Add(question);
                 _context.SaveChanges();
             }
             catch (Exception e)
@@ -38,12 +40,12 @@ namespace ElearningData.MySQL
 
         //Η μέθοδος που διαγράφει ένα αντικείμενο από τη βάση  και επιστρέφει
         //ένα κενό κείμενο αν όλα πάνε καλά ή ένα κείμενο σφάλματος αν υπάρξει πρόβλημα
-        public string Delete(MultipleChoiceQModel question)
+        public string Delete(TrueFalseQModel question)
         {
             string error = string.Empty;
             try
             {
-                _context.MultipleChoiceQs.Remove(question);
+                _context.TrueFalseQs.Remove(question);
                 _context.SaveChanges();
             }
             catch (Exception e)
@@ -56,27 +58,27 @@ namespace ElearningData.MySQL
 
         //Η μέθοδος που κάνει κλήση στη βάση και επιστρέφει το αντικείμενο 
         //με βάση το id του. Αν δεν βρει κάτι επιστρέφει null
-        public MultipleChoiceQModel Get(int id)
+        public TrueFalseQModel Get(int id)
         {
-            return _context.MultipleChoiceQs
+            return _context.TrueFalseQs
                 .First(x => x.Id == id);
         }
 
         //Η μέθοδός που επιστρέφει μια λίστα με όλα τα αντικείμενα που υπάρχουν στη βάση
-        public List<MultipleChoiceQModel> GetAll()
+        public List<TrueFalseQModel> GetAll()
         {
-            return _context.MultipleChoiceQs
+            return _context.TrueFalseQs
                 .ToList();
         }
 
         //Η μέθοδος που θα ενημέρωση ένα αντικείμενο που υπάρχει στη βάση και επιστρέφει
         //ένα κενό κείμενο αν όλα πάνε καλά ή ένα κείμενο σφάλματος αν υπάρξει πρόβλημα
-        public string Update(MultipleChoiceQModel question)
+        public string Update(TrueFalseQModel question)
         {
             string error = string.Empty;
             try
             {
-                _context.MultipleChoiceQs.Update(question);
+                _context.TrueFalseQs.Update(question);
                 _context.SaveChanges();
             }
             catch (Exception e)
@@ -87,4 +89,5 @@ namespace ElearningData.MySQL
             return error;
         }
     }
+}
 }

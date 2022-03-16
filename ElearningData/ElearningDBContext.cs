@@ -41,5 +41,7 @@ namespace ElearningData
             _connectionString = $"server={server}; port={port}; database={database}; user={username}; password={password}; Charset=utf8mb4;";
             //_connectionString = $"server=localhost; port=3306; database=eLearningdb; user=babis200; password={password}; Charset=utf8mb4;";
         }
+
+        //TODO - add OnConfiguring gor cascase delete
     }
 }
