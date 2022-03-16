@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using ElearningModels.Models.Users;
 
 namespace ElearningData.Interfaces
@@ -16,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(StudentModel student);
 
-        StudentModel Get(long id);
+        StudentModel Get(int id);
 
         List<StudentModel> GetAll();
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using ElearningModels.Models;
 using ElearningModels.Models.Questions;
 using ElearningModels.Models.Users;
@@ -12,16 +7,16 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ElearningData
 {
-    internal class ElearningDBContext :DbContext
+    public class ElearningDBContext : DbContext
     {
         private string _connectionString;
 
         public DbSet<CourseModel> Courses { get; set; }
 
         public DbSet<ExamModel> Exams { get; set; }
-        
+
         public DbSet<SubjectModel> Subjects { get; set; }
-        
+
         public DbSet<FreeFormQModel> FreeFormQs { get; set; }
 
         public DbSet<MatchQModel> MatchQs { get; set; }
@@ -30,11 +25,11 @@ namespace ElearningData
 
         public DbSet<TrueFalseQModel> TrueFalseQs { get; set; }
 
-        public DbSet<AdminModel> Admins { get; set;}
-        
-        public DbSet<TeacherModel> Teachers { get; set;}
-        
-        public DbSet<StudentModel> Students { get; set;}
+        public DbSet<AdminModel> Admins { get; set; }
+
+        public DbSet<TeacherModel> Teachers { get; set; }
+
+        public DbSet<StudentModel> Students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

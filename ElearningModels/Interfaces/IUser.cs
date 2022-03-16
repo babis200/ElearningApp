@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ElearningModels.Interfaces
 {
     public interface IUser
     {
-        [BsonId]
-        public ObjectId Id { get; set; }
+        [Key]
+        public int Id { get; set; }
 
-        [BsonElement("username")]
+        [Required(ErrorMessage = "Υποχρεωτικό πεδίο")]
         public string Username { get; set; }
 
-        [BsonElement("password")]
+        [RegularExpression(@".{3,}", ErrorMessage = "Ελάχιστο μέγεθος τρεις χαρακτήρες")]
         public string Password { get; set; }
 
-        public string Icon  { get; set; }
+        public string Icon { get; set; }
 
         public enum Role
         {

@@ -1,6 +1,4 @@
 
-using System.Data;
-
 using ElearningModels.Interfaces;
 
 using MaterialSkin2DotNet.Controls;
@@ -16,7 +14,7 @@ namespace ElearningApp
             InitializeComponent();
             _user = user;
             if (!string.IsNullOrEmpty(_user.Icon))
-            { 
+            {
                 profileButton.Icon = Image.FromFile(_user.Icon);
             }
 

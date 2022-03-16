@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using ElearningModels.Models.Users;
 
 namespace ElearningData.Interfaces
@@ -16,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(AdminModel admin);
 
-        AdminModel Get(long id);
+        AdminModel Get(int id);
 
         List<AdminModel> GetAll();
     }

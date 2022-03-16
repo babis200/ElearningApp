@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using ElearningModels.Models.Questions;
 
 namespace ElearningData.Interfaces
@@ -16,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(TrueFalseQModel question);
 
-        TrueFalseQModel Get(long id);
+        TrueFalseQModel Get(int id);
 
         List<TrueFalseQModel> GetAll();
     }
