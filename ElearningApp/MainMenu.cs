@@ -34,5 +34,10 @@ namespace ElearningApp
                 ViewTools.GetOpenedForm<UserView>().Focus();
             }
         }
+
+        private void coursesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

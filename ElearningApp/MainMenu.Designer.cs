@@ -114,6 +114,7 @@
             this.coursesListView.TabIndex = 0;
             this.coursesListView.UseCompatibleStateImageBehavior = false;
             this.coursesListView.View = System.Windows.Forms.View.Details;
+            this.coursesListView.SelectedIndexChanged += new System.EventHandler(this.coursesListView_SelectedIndexChanged);
             // 
             // panel2
             // 
