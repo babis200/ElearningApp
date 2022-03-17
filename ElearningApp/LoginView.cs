@@ -1,25 +1,12 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-using ElearningApp.Properties;
-
+﻿
 using ElearningModels.Interfaces;
+
 using MaterialSkin2DotNet.Controls;
-using Microsoft.VisualBasic;
 
 using MongoDB.Bson;
 using MongoDB.Driver;
+
 using RestSharp;
-using static ElearningApp.AppEnums;
 
 namespace ElearningApp
 {
@@ -38,10 +25,10 @@ namespace ElearningApp
         }
 
         private void LoginView_Load(object sender, EventArgs e)
-{
-            //MongoClient dbClient = new MongoClient(@"mongodb://developer:deve-1992@localhost:27017/");
+        {
+            MongoClient dbClient = new MongoClient(@"mongodb://developer:deve-1992@localhost:27017/");
 
-            //var dbList = dbClient.ListDatabases().ToList();
+            var dbList = dbClient.ListDatabases().ToList();
 
             _dbClient = dbClient;
 
@@ -50,15 +37,15 @@ namespace ElearningApp
         private async void loginButton_Click(object sender, EventArgs e)
         {
             //TODO - authenticate user with authentication microservice
-           /* var request = new RestRequest()
-               .AddQueryParameter("username", usernameTextBox.Text)
-               .AddQueryParameter("password", passwordTextBox.Text);
-            var response = await _authClient.PostAsync<Result<IUser, string>>(request);
-            if (response.IsErr)
-            {
-                MessageBox.Show(response.Err, "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-*/
+            /* var request = new RestRequest()
+                .AddQueryParameter("username", usernameTextBox.Text)
+                .AddQueryParameter("password", passwordTextBox.Text);
+             var response = await _authClient.PostAsync<Result<IUser, string>>(request);
+             if (response.IsErr)
+             {
+                 MessageBox.Show(response.Err, "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }
+ */
             ElearningModels.Models.Users.AdminModel admin = new ElearningModels.Models.Users.AdminModel()
             {
                 Id = ObjectId.GenerateNewId(),
@@ -96,6 +83,6 @@ namespace ElearningApp
             }
         }
 
-        
+
     }
 }
