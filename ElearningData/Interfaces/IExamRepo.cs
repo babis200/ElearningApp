@@ -3,7 +3,7 @@ using ElearningModels.Models;
 
 namespace ElearningData.Interfaces
 {
-    internal interface IExamRepo
+    public interface IExamRepo
     {
         string Add(ExamModel exam);
 

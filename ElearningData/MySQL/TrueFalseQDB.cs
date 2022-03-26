@@ -1,8 +1,6 @@
 ﻿using ElearningData.Interfaces;
 
 using ElearningModels.Models.Questions;
-using ElearningModels.Models.Users;
-using Microsoft.EntityFrameworkCore;
 
 namespace ElearningData.MySQL
 {
@@ -90,4 +88,4 @@ namespace ElearningData.MySQL
         }
     }
 }
-}
+

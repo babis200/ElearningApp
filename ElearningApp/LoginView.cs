@@ -1,9 +1,6 @@
 ﻿
-using ElearningModels.Interfaces;
-
 using MaterialSkin2DotNet.Controls;
 
-using MongoDB.Bson;
 using MongoDB.Driver;
 
 using RestSharp;
@@ -35,9 +32,9 @@ namespace ElearningApp
         }
 
         private async void loginButton_Click(object sender, EventArgs e)
-        {
+        {/*
             //TODO - authenticate user with authentication microservice
-            /* var request = new RestRequest()
+            *//* var request = new RestRequest()
                 .AddQueryParameter("username", usernameTextBox.Text)
                 .AddQueryParameter("password", passwordTextBox.Text);
              var response = await _authClient.PostAsync<Result<IUser, string>>(request);
@@ -45,7 +42,7 @@ namespace ElearningApp
              {
                  MessageBox.Show(response.Err, "Σφάλμα", MessageBoxButtons.OK, MessageBoxIcon.Error);
              }
- */
+            *//*
             ElearningModels.Models.Users.AdminModel admin = new ElearningModels.Models.Users.AdminModel()
             {
                 Id = ObjectId.GenerateNewId(),
@@ -67,7 +64,7 @@ namespace ElearningApp
             else
             {
                 ViewTools.GetOpenedForm<MainMenu>().Focus();
-            }
+            }*/
         }
 
         private void signupButton_Click(object sender, EventArgs e)

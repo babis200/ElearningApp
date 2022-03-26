@@ -1,5 +1,5 @@
 
-using ElearningModels.Interfaces;
+using ElearningServices;
 
 using MaterialSkin2DotNet.Controls;
 
@@ -7,24 +7,19 @@ namespace ElearningApp
 {
     public partial class MainMenu : MaterialForm
     {
-        IUser _user;
+        ServiceCollection _services;
 
-        public MainMenu(IUser user)
+        public MainMenu(ServiceCollection services)
         {
             InitializeComponent();
-            _user = user;
-            if (!string.IsNullOrEmpty(_user.Icon))
-            {
-                profileButton.Icon = Image.FromFile(_user.Icon);
-            }
-
+            _services = services;
         }
 
         private void profileButton_Click(object sender, EventArgs e)
         {
             if (!ViewTools.IsFormOpened<UserView>())
             {
-                var userView = new UserView(_user);
+                var userView = new UserView();
                 userView.Show();
             }
             else

@@ -1,12 +1,6 @@
 ﻿using ElearningData.Interfaces;
 
-using ElearningModels.Interfaces;
-using ElearningModels.Models;
 using ElearningModels.Models.Questions;
-
-using Microsoft.EntityFrameworkCore;
-
-using Ubiety.Dns.Core;
 
 namespace ElearningData.MySQL
 {

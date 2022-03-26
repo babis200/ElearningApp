@@ -1,17 +1,15 @@
-﻿using ElearningModels.Interfaces;
-
+﻿
 using MaterialSkin2DotNet.Controls;
 
 namespace ElearningApp
 {
     public partial class UserView : MaterialForm
     {
-        IUser _user;
 
-        public UserView(IUser user)
+        public UserView()
         {
             InitializeComponent();
-            _user = user;
+
 
         }
 
@@ -19,7 +17,7 @@ namespace ElearningApp
         {
             if (!ViewTools.IsFormOpened<CreateUserView>())
             {
-                var cardView = new CreateUserView(_user);
+                var cardView = new CreateUserView();
                 cardView.Show();
             }
             else

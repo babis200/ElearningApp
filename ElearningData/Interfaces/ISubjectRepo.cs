@@ -3,7 +3,7 @@ using ElearningModels.Models;
 
 namespace ElearningData.Interfaces
 {
-    internal interface ISubjectRepo
+    public interface ISubjectRepo
     {
         string Add(SubjectModel subject);
 

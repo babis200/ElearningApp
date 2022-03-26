@@ -1,13 +1,10 @@
 ﻿using ElearningData.Interfaces;
 
-using ElearningModels.Models;
 using ElearningModels.Models.Questions;
-
-using Microsoft.EntityFrameworkCore;
 
 namespace ElearningData.MySQL
 {
-    internal class MatchQDB : IMatchQRepo
+    public class MatchQDB : IMatchQRepo
     {
         ElearningDBContext _context;
 

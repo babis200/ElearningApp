@@ -3,7 +3,7 @@ using ElearningModels.Models.Questions;
 
 namespace ElearningData.Interfaces
 {
-    internal interface IMatchQRepo
+    public interface IMatchQRepo
     {
         string Add(MatchQModel question);
 

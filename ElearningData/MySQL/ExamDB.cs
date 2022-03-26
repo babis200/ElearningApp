@@ -1,6 +1,7 @@
 ﻿using ElearningData.Interfaces;
 
 using ElearningModels.Models;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace ElearningData.MySQL
@@ -57,7 +58,7 @@ namespace ElearningData.MySQL
 
         //Η μέθοδος που κάνει κλήση στη βάση και επιστρέφει το αντικείμενο 
         //με βάση το id του. Αν δεν βρει κάτι επιστρέφει null
-        public ExamModel Get(long id)
+        public ExamModel Get(int id)
         {
             return _context.Exams
                 .Include(c => c.Questions)
