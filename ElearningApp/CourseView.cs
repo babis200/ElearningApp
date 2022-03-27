@@ -1,6 +1,8 @@
 ﻿
 using ElearningModels.Models;
 
+using ElearningServices;
+
 using MaterialSkin2DotNet.Controls;
 
 namespace ElearningApp
@@ -9,10 +11,13 @@ namespace ElearningApp
     {
         CourseModel _course;
 
-        public CourseView(CourseModel course)
+        CourseService _service;
+
+        public CourseView(CourseService service ,CourseModel course )
         {
             InitializeComponent();
             _course = course;
+            _service = service;
 
         }
 

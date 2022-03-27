@@ -6,7 +6,9 @@
 
         public string Name { get; set; }
 
-        public string Teacher { get; set; }
+        public List<string> Teacher { get; set; }
+
+        public string Description { get; set; }
 
         public List<SubjectModel> Subjects { get; set; }
 

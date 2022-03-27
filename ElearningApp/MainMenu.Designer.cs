@@ -32,11 +32,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.profileButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.coursesListView = new MaterialSkin2DotNet.Controls.MaterialListView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.newCourseButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,8 +94,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.28426F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.71574F));
-            this.tableLayoutPanel2.Controls.Add(this.coursesListView, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 69);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -95,26 +103,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(788, 311);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // coursesListView
-            // 
-            this.coursesListView.AutoSizeTable = false;
-            this.coursesListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.coursesListView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.coursesListView.Depth = 0;
-            this.coursesListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.coursesListView.FullRowSelect = true;
-            this.coursesListView.Location = new System.Drawing.Point(3, 3);
-            this.coursesListView.MinimumSize = new System.Drawing.Size(200, 100);
-            this.coursesListView.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.coursesListView.MouseState = MaterialSkin2DotNet.MouseState.OUT;
-            this.coursesListView.Name = "coursesListView";
-            this.coursesListView.OwnerDraw = true;
-            this.coursesListView.Size = new System.Drawing.Size(405, 305);
-            this.coursesListView.TabIndex = 0;
-            this.coursesListView.UseCompatibleStateImageBehavior = false;
-            this.coursesListView.View = System.Windows.Forms.View.Details;
-            this.coursesListView.SelectedIndexChanged += new System.EventHandler(this.coursesListView_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -125,6 +113,79 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(371, 305);
             this.panel2.TabIndex = 1;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.73771F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.2623F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(405, 305);
+            this.tableLayoutPanel3.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.newCourseButton);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(399, 42);
+            this.panel3.TabIndex = 0;
+            // 
+            // newCourseButton
+            // 
+            this.newCourseButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.newCourseButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.newCourseButton.Depth = 0;
+            this.newCourseButton.HighEmphasis = true;
+            this.newCourseButton.Icon = null;
+            this.newCourseButton.Location = new System.Drawing.Point(201, 3);
+            this.newCourseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.newCourseButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.newCourseButton.Name = "newCourseButton";
+            this.newCourseButton.Size = new System.Drawing.Size(207, 36);
+            this.newCourseButton.TabIndex = 0;
+            this.newCourseButton.Text = "Δημιουργία μαθήματος";
+            this.newCourseButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.newCourseButton.UseAccentColor = false;
+            this.newCourseButton.UseVisualStyleBackColor = true;
+            this.newCourseButton.Click += new System.EventHandler(this.newCourseButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.Teacher});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 51);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(399, 251);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name.HeaderText = "Όνομα";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Teacher
+            // 
+            this.Teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Teacher.HeaderText = "Καθηγητής/ες";
+            this.Teacher.Name = "Teacher";
+            this.Teacher.ReadOnly = true;
             // 
             // MainMenu
             // 
@@ -137,6 +198,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -147,7 +212,12 @@
         private Panel panel1;
         private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton profileButton;
         private TableLayoutPanel tableLayoutPanel2;
-        private MaterialSkin2DotNet.Controls.MaterialListView coursesListView;
         private Panel panel2;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Panel panel3;
+        private MaterialSkin2DotNet.Controls.MaterialButton newCourseButton;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn Teacher;
     }
 }

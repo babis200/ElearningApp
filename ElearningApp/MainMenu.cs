@@ -32,5 +32,18 @@ namespace ElearningApp
         {
 
         }
+
+        private void newCourseButton_Click(object sender, EventArgs e)
+        {
+            if (!ViewTools.IsFormOpened<CourseView>())
+            {
+                var courseView = new AddEditCourseView(_services.CourseService);
+                courseView.Show();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<CourseView>().Focus();
+            }
+        }
     }
 }
