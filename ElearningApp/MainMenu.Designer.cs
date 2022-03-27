@@ -37,7 +37,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.newCourseButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -163,7 +163,7 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.CourseName,
             this.Teacher});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 51);
@@ -173,12 +173,12 @@
             this.dataGridView1.Size = new System.Drawing.Size(399, 251);
             this.dataGridView1.TabIndex = 1;
             // 
-            // Name
+            // CourseName
             // 
-            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name.HeaderText = "Όνομα";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CourseName.HeaderText = "Όνομα";
+            this.CourseName.Name = "CourseName";
+            this.CourseName.ReadOnly = true;
             // 
             // Teacher
             // 
@@ -217,7 +217,7 @@
         private Panel panel3;
         private MaterialSkin2DotNet.Controls.MaterialButton newCourseButton;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn CourseName;
         private DataGridViewTextBoxColumn Teacher;
     }
 }

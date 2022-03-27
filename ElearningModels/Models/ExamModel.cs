@@ -1,10 +1,15 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
 using ElearningModels.Interfaces;
 
 namespace ElearningModels.Models
 {
     public class ExamModel
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int Id { get; set; }
 
         public string Name { get; set; }

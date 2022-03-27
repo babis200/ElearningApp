@@ -37,7 +37,7 @@ namespace ElearningApp
         {
             if (!ViewTools.IsFormOpened<CourseView>())
             {
-                var courseView = new AddEditCourseView(_services.CourseService);
+                var courseView = new AddEditCourseView(_services, new ElearningModels.Models.CourseModel());
                 courseView.Show();
             }
             else

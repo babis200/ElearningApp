@@ -28,39 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl = new MaterialSkin2DotNet.Controls.MaterialTabControl();
             this.resourcesTabPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.resourceslDataTable = new MaterialSkin2DotNet.Controls.MaterialDataTable();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialFloatingActionButton3 = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton2 = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton1 = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.subjectNameTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
+            this.addResourceButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.deleteResourceButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.studyResourceButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.examsTabPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.examsDataTable = new MaterialSkin2DotNet.Controls.MaterialDataTable();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.materialFloatingActionButton4 = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton5 = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.materialFloatingActionButton6 = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.materialTextBox1 = new MaterialSkin2DotNet.Controls.MaterialTextBox();
+            this.takeExamButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.addExamButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.deleteExamButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.editExamButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.resourcesDGV = new System.Windows.Forms.DataGridView();
+            this.examsDGV = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.resourcesTabPage.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resourceslDataTable)).BeginInit();
             this.panel1.SuspendLayout();
             this.examsTabPage.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.examsDataTable)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesDGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examsDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -92,8 +85,8 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.resourceslDataTable, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.resourcesDGV, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -103,109 +96,72 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(780, 349);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // resourceslDataTable
-            // 
-            this.resourceslDataTable.AllowUserToAddRows = false;
-            this.resourceslDataTable.AllowUserToDeleteRows = false;
-            this.resourceslDataTable.AllowUserToOrderColumns = true;
-            this.resourceslDataTable.AllowUserToResizeRows = false;
-            this.resourceslDataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.resourceslDataTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.resourceslDataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resourceslDataTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.resourceslDataTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resourceslDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.resourceslDataTable.ColumnHeadersHeight = 56;
-            this.resourceslDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.resourceslDataTable.DefaultCellStyle = dataGridViewCellStyle10;
-            this.resourceslDataTable.Depth = 0;
-            this.resourceslDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resourceslDataTable.EnableHeadersVisualStyles = false;
-            this.resourceslDataTable.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.resourceslDataTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.resourceslDataTable.Location = new System.Drawing.Point(3, 80);
-            this.resourceslDataTable.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.resourceslDataTable.Name = "resourceslDataTable";
-            this.resourceslDataTable.ReadOnly = true;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resourceslDataTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.resourceslDataTable.RowHeadersVisible = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.resourceslDataTable.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.resourceslDataTable.RowTemplate.Height = 52;
-            this.resourceslDataTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.resourceslDataTable.ShowVerticalScroll = false;
-            this.resourceslDataTable.Size = new System.Drawing.Size(774, 266);
-            this.resourceslDataTable.TabIndex = 0;
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.materialTextBox1);
-            this.panel1.Controls.Add(this.materialFloatingActionButton3);
-            this.panel1.Controls.Add(this.materialFloatingActionButton2);
-            this.panel1.Controls.Add(this.materialFloatingActionButton1);
+            this.panel1.Controls.Add(this.subjectNameTextBox);
+            this.panel1.Controls.Add(this.addResourceButton);
+            this.panel1.Controls.Add(this.deleteResourceButton);
+            this.panel1.Controls.Add(this.studyResourceButton);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(774, 71);
             this.panel1.TabIndex = 1;
             // 
-            // materialFloatingActionButton3
+            // subjectNameTextBox
             // 
-            this.materialFloatingActionButton3.Depth = 0;
-            this.materialFloatingActionButton3.Icon = global::ElearningApp.Properties.Resources.icons8_add_481;
-            this.materialFloatingActionButton3.Location = new System.Drawing.Point(553, 3);
-            this.materialFloatingActionButton3.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialFloatingActionButton3.Name = "materialFloatingActionButton3";
-            this.materialFloatingActionButton3.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton3.TabIndex = 2;
-            this.materialFloatingActionButton3.Text = "materialFloatingActionButton3";
-            this.materialFloatingActionButton3.UseVisualStyleBackColor = true;
+            this.subjectNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subjectNameTextBox.Depth = 0;
+            this.subjectNameTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.subjectNameTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.subjectNameTextBox.LeadingIcon = null;
+            this.subjectNameTextBox.Location = new System.Drawing.Point(14, 9);
+            this.subjectNameTextBox.MaxLength = 50;
+            this.subjectNameTextBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.subjectNameTextBox.Multiline = false;
+            this.subjectNameTextBox.Name = "subjectNameTextBox";
+            this.subjectNameTextBox.Size = new System.Drawing.Size(203, 50);
+            this.subjectNameTextBox.TabIndex = 3;
+            this.subjectNameTextBox.Text = "Τίτλος κεφαλαίου";
+            this.subjectNameTextBox.TrailingIcon = global::ElearningApp.Properties.Resources.icons8_edit_24;
+            this.subjectNameTextBox.TrailingIconClick += new System.EventHandler(this.subjectNameTextBox_TrailingIconClick);
             // 
-            // materialFloatingActionButton2
+            // addResourceButton
             // 
-            this.materialFloatingActionButton2.Depth = 0;
-            this.materialFloatingActionButton2.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
-            this.materialFloatingActionButton2.Location = new System.Drawing.Point(627, 3);
-            this.materialFloatingActionButton2.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialFloatingActionButton2.Name = "materialFloatingActionButton2";
-            this.materialFloatingActionButton2.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton2.TabIndex = 1;
-            this.materialFloatingActionButton2.Text = "materialFloatingActionButton2";
-            this.materialFloatingActionButton2.UseVisualStyleBackColor = true;
+            this.addResourceButton.Depth = 0;
+            this.addResourceButton.Icon = global::ElearningApp.Properties.Resources.icons8_add_481;
+            this.addResourceButton.Location = new System.Drawing.Point(553, 3);
+            this.addResourceButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.addResourceButton.Name = "addResourceButton";
+            this.addResourceButton.Size = new System.Drawing.Size(56, 56);
+            this.addResourceButton.TabIndex = 2;
+            this.addResourceButton.Text = "materialFloatingActionButton3";
+            this.addResourceButton.UseVisualStyleBackColor = true;
+            this.addResourceButton.Click += new System.EventHandler(this.addResourceButton_Click);
             // 
-            // materialFloatingActionButton1
+            // deleteResourceButton
             // 
-            this.materialFloatingActionButton1.Depth = 0;
-            this.materialFloatingActionButton1.Icon = global::ElearningApp.Properties.Resources.icons8_view_48;
-            this.materialFloatingActionButton1.Location = new System.Drawing.Point(702, 3);
-            this.materialFloatingActionButton1.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialFloatingActionButton1.Name = "materialFloatingActionButton1";
-            this.materialFloatingActionButton1.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton1.TabIndex = 0;
-            this.materialFloatingActionButton1.Text = "materialFloatingActionButton1";
-            this.materialFloatingActionButton1.UseVisualStyleBackColor = true;
+            this.deleteResourceButton.Depth = 0;
+            this.deleteResourceButton.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
+            this.deleteResourceButton.Location = new System.Drawing.Point(627, 3);
+            this.deleteResourceButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.deleteResourceButton.Name = "deleteResourceButton";
+            this.deleteResourceButton.Size = new System.Drawing.Size(56, 56);
+            this.deleteResourceButton.TabIndex = 1;
+            this.deleteResourceButton.Text = "materialFloatingActionButton2";
+            this.deleteResourceButton.UseVisualStyleBackColor = true;
+            // 
+            // studyResourceButton
+            // 
+            this.studyResourceButton.Depth = 0;
+            this.studyResourceButton.Icon = global::ElearningApp.Properties.Resources.icons8_view_48;
+            this.studyResourceButton.Location = new System.Drawing.Point(702, 3);
+            this.studyResourceButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.studyResourceButton.Name = "studyResourceButton";
+            this.studyResourceButton.Size = new System.Drawing.Size(56, 56);
+            this.studyResourceButton.TabIndex = 0;
+            this.studyResourceButton.Text = "materialFloatingActionButton1";
+            this.studyResourceButton.UseVisualStyleBackColor = true;
             // 
             // examsTabPage
             // 
@@ -222,7 +178,7 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.examsDataTable, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.examsDGV, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
@@ -233,125 +189,94 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(780, 349);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
-            // examsDataTable
-            // 
-            this.examsDataTable.AllowUserToAddRows = false;
-            this.examsDataTable.AllowUserToDeleteRows = false;
-            this.examsDataTable.AllowUserToOrderColumns = true;
-            this.examsDataTable.AllowUserToResizeRows = false;
-            this.examsDataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.examsDataTable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.examsDataTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.examsDataTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SunkenHorizontal;
-            this.examsDataTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.examsDataTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.examsDataTable.ColumnHeadersHeight = 56;
-            this.examsDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.examsDataTable.DefaultCellStyle = dataGridViewCellStyle14;
-            this.examsDataTable.Depth = 0;
-            this.examsDataTable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.examsDataTable.EnableHeadersVisualStyles = false;
-            this.examsDataTable.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.examsDataTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(239)))), ((int)(((byte)(239)))));
-            this.examsDataTable.Location = new System.Drawing.Point(3, 80);
-            this.examsDataTable.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.examsDataTable.Name = "examsDataTable";
-            this.examsDataTable.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.examsDataTable.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.examsDataTable.RowHeadersVisible = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.examsDataTable.RowsDefaultCellStyle = dataGridViewCellStyle16;
-            this.examsDataTable.RowTemplate.Height = 52;
-            this.examsDataTable.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.examsDataTable.ShowVerticalScroll = false;
-            this.examsDataTable.Size = new System.Drawing.Size(774, 266);
-            this.examsDataTable.TabIndex = 0;
-            // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.materialFloatingActionButton4);
-            this.panel2.Controls.Add(this.materialFloatingActionButton5);
-            this.panel2.Controls.Add(this.materialFloatingActionButton6);
+            this.panel2.Controls.Add(this.takeExamButton);
+            this.panel2.Controls.Add(this.addExamButton);
+            this.panel2.Controls.Add(this.deleteExamButton);
+            this.panel2.Controls.Add(this.editExamButton);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(774, 71);
             this.panel2.TabIndex = 1;
             // 
-            // materialFloatingActionButton4
+            // takeExamButton
             // 
-            this.materialFloatingActionButton4.Depth = 0;
-            this.materialFloatingActionButton4.Icon = global::ElearningApp.Properties.Resources.icons8_add_481;
-            this.materialFloatingActionButton4.Location = new System.Drawing.Point(553, 3);
-            this.materialFloatingActionButton4.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialFloatingActionButton4.Name = "materialFloatingActionButton4";
-            this.materialFloatingActionButton4.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton4.TabIndex = 2;
-            this.materialFloatingActionButton4.Text = "materialFloatingActionButton4";
-            this.materialFloatingActionButton4.UseVisualStyleBackColor = true;
+            this.takeExamButton.Depth = 0;
+            this.takeExamButton.Icon = global::ElearningApp.Properties.Resources.icons8_quiz_50;
+            this.takeExamButton.Location = new System.Drawing.Point(703, 3);
+            this.takeExamButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.takeExamButton.Name = "takeExamButton";
+            this.takeExamButton.Size = new System.Drawing.Size(56, 56);
+            this.takeExamButton.TabIndex = 3;
+            this.takeExamButton.Text = "materialFloatingActionButton1";
+            this.takeExamButton.UseVisualStyleBackColor = true;
+            this.takeExamButton.Click += new System.EventHandler(this.materialFloatingActionButton1_Click);
             // 
-            // materialFloatingActionButton5
+            // addExamButton
             // 
-            this.materialFloatingActionButton5.Depth = 0;
-            this.materialFloatingActionButton5.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
-            this.materialFloatingActionButton5.Location = new System.Drawing.Point(627, 3);
-            this.materialFloatingActionButton5.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialFloatingActionButton5.Name = "materialFloatingActionButton5";
-            this.materialFloatingActionButton5.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton5.TabIndex = 1;
-            this.materialFloatingActionButton5.Text = "materialFloatingActionButton5";
-            this.materialFloatingActionButton5.UseVisualStyleBackColor = true;
+            this.addExamButton.Depth = 0;
+            this.addExamButton.Icon = global::ElearningApp.Properties.Resources.icons8_add_481;
+            this.addExamButton.Location = new System.Drawing.Point(481, 3);
+            this.addExamButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.addExamButton.Name = "addExamButton";
+            this.addExamButton.Size = new System.Drawing.Size(56, 56);
+            this.addExamButton.TabIndex = 2;
+            this.addExamButton.Text = "materialFloatingActionButton4";
+            this.addExamButton.UseVisualStyleBackColor = true;
+            this.addExamButton.Click += new System.EventHandler(this.addExamButton_Click);
             // 
-            // materialFloatingActionButton6
+            // deleteExamButton
             // 
-            this.materialFloatingActionButton6.Depth = 0;
-            this.materialFloatingActionButton6.Icon = global::ElearningApp.Properties.Resources.icons8_view_48;
-            this.materialFloatingActionButton6.Location = new System.Drawing.Point(702, 3);
-            this.materialFloatingActionButton6.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialFloatingActionButton6.Name = "materialFloatingActionButton6";
-            this.materialFloatingActionButton6.Size = new System.Drawing.Size(56, 56);
-            this.materialFloatingActionButton6.TabIndex = 0;
-            this.materialFloatingActionButton6.Text = "materialFloatingActionButton6";
-            this.materialFloatingActionButton6.UseVisualStyleBackColor = true;
+            this.deleteExamButton.Depth = 0;
+            this.deleteExamButton.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
+            this.deleteExamButton.Location = new System.Drawing.Point(555, 3);
+            this.deleteExamButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.deleteExamButton.Name = "deleteExamButton";
+            this.deleteExamButton.Size = new System.Drawing.Size(56, 56);
+            this.deleteExamButton.TabIndex = 1;
+            this.deleteExamButton.Text = "materialFloatingActionButton5";
+            this.deleteExamButton.UseVisualStyleBackColor = true;
+            this.deleteExamButton.Click += new System.EventHandler(this.deleteExamButton_Click);
             // 
-            // materialTextBox1
+            // editExamButton
             // 
-            this.materialTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.materialTextBox1.Depth = 0;
-            this.materialTextBox1.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.materialTextBox1.LeadingIcon = null;
-            this.materialTextBox1.Location = new System.Drawing.Point(14, 9);
-            this.materialTextBox1.MaxLength = 50;
-            this.materialTextBox1.MouseState = MaterialSkin2DotNet.MouseState.OUT;
-            this.materialTextBox1.Multiline = false;
-            this.materialTextBox1.Name = "materialTextBox1";
-            this.materialTextBox1.Size = new System.Drawing.Size(203, 50);
-            this.materialTextBox1.TabIndex = 3;
-            this.materialTextBox1.Text = "Τίτλος κεφαλαίου";
-            this.materialTextBox1.TrailingIcon = global::ElearningApp.Properties.Resources.icons8_edit_24;
+            this.editExamButton.Depth = 0;
+            this.editExamButton.Icon = global::ElearningApp.Properties.Resources.icons8_edit_24;
+            this.editExamButton.Location = new System.Drawing.Point(630, 3);
+            this.editExamButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.editExamButton.Name = "editExamButton";
+            this.editExamButton.Size = new System.Drawing.Size(56, 56);
+            this.editExamButton.TabIndex = 0;
+            this.editExamButton.Text = "materialFloatingActionButton6";
+            this.editExamButton.UseVisualStyleBackColor = true;
+            // 
+            // resourcesDGV
+            // 
+            this.resourcesDGV.AllowUserToAddRows = false;
+            this.resourcesDGV.AllowUserToDeleteRows = false;
+            this.resourcesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resourcesDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resourcesDGV.Location = new System.Drawing.Point(3, 80);
+            this.resourcesDGV.Name = "resourcesDGV";
+            this.resourcesDGV.ReadOnly = true;
+            this.resourcesDGV.RowTemplate.Height = 25;
+            this.resourcesDGV.Size = new System.Drawing.Size(774, 266);
+            this.resourcesDGV.TabIndex = 2;
+            // 
+            // examsDGV
+            // 
+            this.examsDGV.AllowUserToAddRows = false;
+            this.examsDGV.AllowUserToDeleteRows = false;
+            this.examsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.examsDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.examsDGV.Location = new System.Drawing.Point(3, 80);
+            this.examsDGV.Name = "examsDGV";
+            this.examsDGV.ReadOnly = true;
+            this.examsDGV.RowTemplate.Height = 25;
+            this.examsDGV.Size = new System.Drawing.Size(774, 266);
+            this.examsDGV.TabIndex = 3;
             // 
             // SubjectView
             // 
@@ -361,15 +286,16 @@
             this.Controls.Add(this.tabControl);
             this.Name = "SubjectView";
             this.Text = "SubjectView";
+            this.Load += new System.EventHandler(this.SubjectView_Load);
             this.tabControl.ResumeLayout(false);
             this.resourcesTabPage.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.resourceslDataTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.examsTabPage.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.examsDataTable)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resourcesDGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.examsDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,17 +306,18 @@
         private TabPage resourcesTabPage;
         private TabPage examsTabPage;
         private TableLayoutPanel tableLayoutPanel1;
-        private MaterialSkin2DotNet.Controls.MaterialDataTable resourceslDataTable;
         private Panel panel1;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton materialFloatingActionButton3;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton materialFloatingActionButton2;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton materialFloatingActionButton1;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton addResourceButton;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton deleteResourceButton;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton studyResourceButton;
         private TableLayoutPanel tableLayoutPanel2;
-        private MaterialSkin2DotNet.Controls.MaterialDataTable examsDataTable;
         private Panel panel2;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton materialFloatingActionButton4;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton materialFloatingActionButton5;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton materialFloatingActionButton6;
-        private MaterialSkin2DotNet.Controls.MaterialTextBox materialTextBox1;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton addExamButton;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton deleteExamButton;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton editExamButton;
+        private MaterialSkin2DotNet.Controls.MaterialTextBox subjectNameTextBox;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton takeExamButton;
+        private DataGridView resourcesDGV;
+        private DataGridView examsDGV;
     }
 }

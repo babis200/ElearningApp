@@ -1,33 +1,22 @@
 ﻿
 using MaterialSkin2DotNet.Controls;
 
-using MongoDB.Driver;
 
-using RestSharp;
 
 namespace ElearningApp
 {
     public partial class LoginView : MaterialForm
     {
-        public RestClient _authClient { get; set; }
 
-        public MongoClient _dbClient { get; set; }
-
-        public LoginView(RestClient authClient)
+        public LoginView()
         {
             InitializeComponent();
 
-            _authClient = authClient;
             loginButton.ForeColor = Color.Green;
         }
 
         private void LoginView_Load(object sender, EventArgs e)
         {
-            MongoClient dbClient = new MongoClient(@"mongodb://developer:deve-1992@localhost:27017/");
-
-            var dbList = dbClient.ListDatabases().ToList();
-
-            _dbClient = dbClient;
 
         }
 

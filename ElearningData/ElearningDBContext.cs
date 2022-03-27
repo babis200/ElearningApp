@@ -9,7 +9,7 @@ namespace ElearningData
 {
     public class ElearningDBContext : DbContext
     {
-        private string _connectionString;
+        private string _connectionString = $"server=localhost; port=3306; database=eLearningdb; user=root; password=1234; Charset=utf8mb4;";
 
         public DbSet<CourseModel> Courses { get; set; }
 
@@ -42,6 +42,56 @@ namespace ElearningData
             //_connectionString = $"server=localhost; port=3306; database=eLearningdb; user=babis200; password={password}; Charset=utf8mb4;";
         }
 
-        //TODO - add OnConfiguring gor cascase delete
+        //TODO - add OnConfiguring for cascase delete
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+           builder.Entity<CourseModel>()
+                 .HasMany(p => p.Subjects)
+                 .WithOne()
+                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<CourseModel>()
+                 .HasMany(p => p.Exams)
+                 .WithOne()
+                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<MatchQModel>()
+                .Property(e => e.Choices)
+                .HasConversion(
+                    v => string.Join(',', v),
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+
+            builder.Entity<MatchQModel>()
+                .Property(e => e.Answers)
+                .HasConversion(
+                    v => string.Join(',', v),
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+
+            builder.Entity<MultipleChoiceQModel>()
+                .Property(e => e.Choices)
+                .HasConversion(
+                    v => string.Join(',', v),
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+
+            builder.Entity<CourseModel>()
+                .Property(e => e.Teachers)
+                .HasConversion(
+                    v => string.Join(',', v),
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+
+            builder.Entity<ExamModel>()
+                .Property(e => e.Grades)
+                .HasConversion(
+                    v => string.Join(',', v.ToString()),
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList());
+
+            builder.Entity<SubjectModel>()
+               .Property(e => e.Resources)
+               .HasConversion(
+                   v => string.Join(',', v),
+                   v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+
+        }
     }
 }
