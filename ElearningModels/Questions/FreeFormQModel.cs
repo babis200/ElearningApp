@@ -2,14 +2,13 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-using ElearningModels.Interfaces;
 
-namespace ElearningModels.Models.Questions
+namespace ElearningModels.Questions
 {
-    public class FreeFormQModel : IQuestion
+    public class FreeFormQModel
     {
 
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
 
         public string Question { get; set; }

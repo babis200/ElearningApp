@@ -1,5 +1,5 @@
-﻿using ElearningModels.Models;
-using ElearningModels.Models.Questions;
+﻿using ElearningModels;
+using ElearningModels.Questions;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -7,7 +7,9 @@ namespace ElearningData
 {
     public class ElearningDBContext : DbContext
     {
-        private string _connectionString = $"server=localhost; port=3306; database=eLearningdb; user=root; password=1234; Charset=utf8mb4;";
+        private string _MySQLconnectionString = $"server=localhost; port=3306; database=eLearningdb; user=root; password=1234; Charset=utf8mb4;";
+
+        private string _SQLiteConnectionString = @"Data Source=.\eLearning.db;";
 
         public DbSet<CourseModel> Courses { get; set; }
 
@@ -25,14 +27,19 @@ namespace ElearningData
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(_connectionString);
+            //optionsBuilder.UseMySQL(_MySQLconnectionString);
+
+            optionsBuilder.UseSqlite(_SQLiteConnectionString);
         }
 
-        public void SetConnectionString(string server, string port, string database, string username, string password)
+       /* public void SetConnectionString(string server, string port, string database, string username, string password)
         {
-            _connectionString = $"server={server}; port={port}; database={database}; user={username}; password={password}; Charset=utf8mb4;";
+            //TODO - intergrate SQLite
+
+            //_MySQLconnectionString = $"server={server}; port={port}; database={database}; user={username}; password={password}; Charset=utf8mb4;";
+            _SQLiteConnectionString = $"server={server}; port={port}; database={database}; user={username}; password={password}; Charset=utf8mb4;";
             //_connectionString = $"server=localhost; port=3306; database=eLearningdb; user=babis200; password={password}; Charset=utf8mb4;";
-        }
+        }*/
 
         //TODO - add OnConfiguring for cascase delete
 

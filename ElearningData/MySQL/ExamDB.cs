@@ -1,6 +1,6 @@
 ﻿using ElearningData.Interfaces;
 
-using ElearningModels.Models;
+using ElearningModels;
 
 using Microsoft.EntityFrameworkCore;
 

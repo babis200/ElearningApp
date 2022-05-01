@@ -1,5 +1,4 @@
-﻿
-using ElearningModels.Models;
+﻿using ElearningModels;
 
 using ElearningServices;
 

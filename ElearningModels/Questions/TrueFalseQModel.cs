@@ -2,20 +2,18 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-using ElearningModels.Interfaces;
 
-namespace ElearningModels.Models.Questions
+namespace ElearningModels.Questions
 {
-    public class TrueFalseQModel : IQuestion
+    public class TrueFalseQModel  
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int Id { get; set; }
 
         [Required(ErrorMessage ="Υποχρεωτικό πεδίο")]
         public string Question { get; set; }
 
         [Required(ErrorMessage = "Υποχρεωτικό πεδίο")]
-
         public bool Answer { get; set; }
     }
 }

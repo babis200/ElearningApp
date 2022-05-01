@@ -1,5 +1,5 @@
 ﻿
-using ElearningModels.Models.Questions;
+using ElearningModels.Questions;
 
 namespace ElearningData.Interfaces
 {

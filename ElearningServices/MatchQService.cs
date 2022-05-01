@@ -1,7 +1,7 @@
 ﻿
 using ElearningData.Interfaces;
 
-using ElearningModels.Models.Questions;
+using ElearningModels.Questions;
 
 namespace ElearningServices
 {

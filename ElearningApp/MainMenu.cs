@@ -1,4 +1,6 @@
 
+using ElearningModels;
+
 using ElearningServices;
 
 using MaterialSkin2DotNet.Controls;
@@ -24,7 +26,7 @@ namespace ElearningApp
         {
             if (!ViewTools.IsFormOpened<CourseView>())
             {
-                var courseView = new AddEditCourseView(_services, new ElearningModels.Models.CourseModel());
+                var courseView = new AddEditCourseView(_services, new CourseModel());
                 courseView.Show();
             }
             else
