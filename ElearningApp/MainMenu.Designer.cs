@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.profileButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.newCourseButton = new MaterialSkin2DotNet.Controls.MaterialButton();
@@ -40,7 +37,6 @@
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -51,7 +47,6 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 64);
@@ -62,39 +57,11 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(794, 383);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.profileButton);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 60);
-            this.panel1.TabIndex = 1;
-            // 
-            // profileButton
-            // 
-            this.profileButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.profileButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.profileButton.BackgroundImage = global::ElearningApp.Properties.Resources.icons8_edit_48;
-            this.profileButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.profileButton.Depth = 0;
-            this.profileButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.profileButton.Icon = global::ElearningApp.Properties.Resources.icons8_male_user_96;
-            this.profileButton.Image = global::ElearningApp.Properties.Resources.icons8_male_user_48;
-            this.profileButton.Location = new System.Drawing.Point(715, 2);
-            this.profileButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.profileButton.Name = "profileButton";
-            this.profileButton.Size = new System.Drawing.Size(60, 58);
-            this.profileButton.TabIndex = 0;
-            this.profileButton.UseVisualStyleBackColor = false;
-            this.profileButton.Click += new System.EventHandler(this.profileButton_Click);
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.28426F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.71574F));
-            this.tableLayoutPanel2.Controls.Add(this.panel2, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 69);
@@ -103,16 +70,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(788, 311);
             this.tableLayoutPanel2.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ElearningApp.Properties.Resources.icons8_question_mark_96;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(414, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(371, 305);
-            this.panel2.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -145,10 +102,11 @@
             this.newCourseButton.Depth = 0;
             this.newCourseButton.HighEmphasis = true;
             this.newCourseButton.Icon = null;
-            this.newCourseButton.Location = new System.Drawing.Point(201, 3);
+            this.newCourseButton.Location = new System.Drawing.Point(188, 3);
             this.newCourseButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.newCourseButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.newCourseButton.Name = "newCourseButton";
+            this.newCourseButton.NoAccentTextColor = System.Drawing.Color.Empty;
             this.newCourseButton.Size = new System.Drawing.Size(207, 36);
             this.newCourseButton.TabIndex = 0;
             this.newCourseButton.Text = "Δημιουργία μαθήματος";
@@ -196,7 +154,6 @@
             this.Name = "MainMenu";
             this.Text = "Dashboard";
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -209,10 +166,7 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
-        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton profileButton;
         private TableLayoutPanel tableLayoutPanel2;
-        private Panel panel2;
         private TableLayoutPanel tableLayoutPanel3;
         private Panel panel3;
         private MaterialSkin2DotNet.Controls.MaterialButton newCourseButton;

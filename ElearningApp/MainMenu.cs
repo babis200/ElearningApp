@@ -15,23 +15,10 @@ namespace ElearningApp
             _services = services;
         }
 
-        private void profileButton_Click(object sender, EventArgs e)
-        {
-            if (!ViewTools.IsFormOpened<UserView>())
-            {
-                var userView = new UserView();
-                userView.Show();
-            }
-            else
-            {
-                ViewTools.GetOpenedForm<UserView>().Focus();
-            }
-        }
-
         private void coursesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
+        } 
 
         private void newCourseButton_Click(object sender, EventArgs e)
         {

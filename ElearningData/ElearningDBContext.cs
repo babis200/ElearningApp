@@ -1,7 +1,5 @@
-﻿
-using ElearningModels.Models;
+﻿using ElearningModels.Models;
 using ElearningModels.Models.Questions;
-using ElearningModels.Models.Users;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -24,12 +22,6 @@ namespace ElearningData
         public DbSet<MultipleChoiceQModel> MultipleChoiceQs { get; set; }
 
         public DbSet<TrueFalseQModel> TrueFalseQs { get; set; }
-
-        public DbSet<AdminModel> Admins { get; set; }
-
-        public DbSet<TeacherModel> Teachers { get; set; }
-
-        public DbSet<StudentModel> Students { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
