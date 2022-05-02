@@ -9,14 +9,16 @@ namespace ElearningApp
 {
     public partial class SubjectView : MaterialForm
     {
-        ServiceCollection _services;
+        SubjectService _service;
         SubjectModel _subject;
+        Action _updateParent;
 
-        public SubjectView(ServiceCollection services, SubjectModel subject)
+        public SubjectView(SubjectService service, SubjectModel subject, Action updateParent)
         {
             InitializeComponent();
-            _services = services;
+            _service = service;
             _subject = subject;
+            _updateParent = updateParent;
         }
 
         private void SubjectView_Load(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace ElearningApp
 
         private void UpdateView()
         {
+            //Name
             subjectNameTextBox.Text = _subject.Name;
             foreach (var resource in _subject.Resources)
             {

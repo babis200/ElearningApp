@@ -12,7 +12,10 @@ using ElearningModels;
 
 using ElearningServices;
 
+using MaterialSkin2DotNet;
 using MaterialSkin2DotNet.Controls;
+
+using static ElearningApp.AppEnums;
 
 namespace ElearningApp
 {
@@ -20,48 +23,104 @@ namespace ElearningApp
     {
         ServiceCollection _services;
         CourseModel _course;
+        readonly Work _work;
+        readonly Action _updateParent;
 
-        public AddEditCourseView(ServiceCollection services, CourseModel course)
+        public AddEditCourseView(Work work, ServiceCollection services, CourseModel course, Action updateParent)
         {
             InitializeComponent();
             _services = services;
             _course = course;
+            _updateParent = updateParent;
+            _work = work;
+
+            switch(_work)
+            {
+                case Work.Add:
+                    this.Text = "Δημιουργία Μαθήματος";
+                    break;
+                case Work.Edit:
+                    this.Text = "Επεξεργασία Μαθήματος";
+                    break;
+                case Work.Preview:
+                    this.Text = "Προβολή μαθήματος";
+                    ViewTools.ReadOnlyAll(this);
+                    break;
+            }
 
             UpdateView();
         }
 
         private void UpdateView()
         {
+            //Name
             nameTextBox.Text = _course.Name;
-            foreach (var teacher in _course.Teachers)
-            {
-                teachersDGV.Rows.Add(teacher);
-            }
+            //Teachers
+            teachersDGV.DataSource = null;
+            teachersDGV.DataSource = _course.Teachers;
+            //Description
             descriptionMultiLineTextBox.Text = _course.Description;
+            //Subjects
+            UpdateSuvbectsListBox();
+        }
+        private void UpdateSuvbectsListBox()
+        {
+            if (_course.Subjects is null) return;
+            foreach (var subject in _course.Subjects)
+            {
+                MaterialListBoxItem lb = new MaterialListBoxItem();
+                lb.Text = subject.Name;
+                lb.SecondaryText = subject.Description;
+                //Φυλάω στο Tag το Id για να ειναι πιο ευκολη η ευρεση του subject sto UpdateModel
+                lb.Tag = subject.Id;
+                subjectsListBox.Items.Add(lb);
+            }
         }
 
         private void UpdateModel()
         {
+            //Name
             _course.Name = nameTextBox.Text;
+            //Teachers
+            GetTeachersFromDGV();
+            //Description
+            _course.Description = descriptionMultiLineTextBox.Text;
+            //Subjects
+            GetSubjectsFromListBox();
+        }
+
+        private void GetTeachersFromDGV()
+        {
+            _course.Teachers = new List<string>();
             foreach (DataGridViewRow row in teachersDGV.Rows)
             {
-                _course.Teachers.Add(row.Cells[0].ToString());
+                _course.Teachers.Add(row.Cells[0].Value.ToString()); 
             }
-            _course.Description = descriptionMultiLineTextBox.Text;
+        }
+
+        private void GetSubjectsFromListBox()
+        {
+            //Empty the list of subjects
+            _course.Subjects = new List<SubjectModel>();
+            //Fill it with subjects from the ListBox
+            foreach (var item in subjectsListBox.Items)
+            {
+                //Γνωρίζω ότι στο Tag αποθηκεύω το Id toy Subject
+                _course.Subjects.Add(_services.SubjectService.Get((int)item.Tag));
+            }
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            //TODO - validate
-            UpdateModel();
-            
+            //TODO - validate course
+            UpdateModel();     
         }
 
         private void addSubjectButton_Click(object sender, EventArgs e)
         {
             if (!ViewTools.IsFormOpened<SubjectView>())
             {
-                var subjectView = new SubjectView(_services, new SubjectModel());
+                var subjectView = new SubjectView(_services.SubjectService, new SubjectModel(), UpdateView);
                 subjectView.Show();
             }
             else

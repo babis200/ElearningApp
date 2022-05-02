@@ -33,14 +33,14 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.newCourseButton = new MaterialSkin2DotNet.Controls.MaterialButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.courseDGV = new System.Windows.Forms.DataGridView();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -76,7 +76,7 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Controls.Add(this.panel3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.courseDGV, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -115,25 +115,27 @@
             this.newCourseButton.UseVisualStyleBackColor = true;
             this.newCourseButton.Click += new System.EventHandler(this.newCourseButton_Click);
             // 
-            // dataGridView1
+            // courseDGV
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.courseDGV.AllowUserToAddRows = false;
+            this.courseDGV.AllowUserToDeleteRows = false;
+            this.courseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CourseName,
             this.Teacher});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(399, 251);
-            this.dataGridView1.TabIndex = 1;
+            this.courseDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.courseDGV.Location = new System.Drawing.Point(3, 51);
+            this.courseDGV.Name = "courseDGV";
+            this.courseDGV.ReadOnly = true;
+            this.courseDGV.RowTemplate.Height = 25;
+            this.courseDGV.Size = new System.Drawing.Size(399, 251);
+            this.courseDGV.TabIndex = 1;
+            this.courseDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courseDGV_CellDoubleClick);
             // 
             // CourseName
             // 
             this.CourseName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CourseName.DataPropertyName = "Name";
             this.CourseName.HeaderText = "Όνομα";
             this.CourseName.Name = "CourseName";
             this.CourseName.ReadOnly = true;
@@ -141,6 +143,7 @@
             // Teacher
             // 
             this.Teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Teacher.DataPropertyName = "TeachersString";
             this.Teacher.HeaderText = "Καθηγητής/ες";
             this.Teacher.Name = "Teacher";
             this.Teacher.ReadOnly = true;
@@ -158,7 +161,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDGV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -170,7 +173,7 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Panel panel3;
         private MaterialSkin2DotNet.Controls.MaterialButton newCourseButton;
-        private DataGridView dataGridView1;
+        private DataGridView courseDGV;
         private DataGridViewTextBoxColumn CourseName;
         private DataGridViewTextBoxColumn Teacher;
     }

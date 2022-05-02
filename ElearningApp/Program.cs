@@ -1,6 +1,8 @@
-using ElearningData;
+﻿using ElearningData;
 
 using ElearningServices;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace ElearningApp
 {
@@ -23,6 +25,16 @@ namespace ElearningApp
 
             var context = new ElearningDBContext();
             var services = new ServiceCollection(context);
+            
+            try
+            {
+                context.Database.Migrate();
+            }
+            catch
+            {
+                MessageBox.Show("Υπάρχει πρόβλημα σύνδεσης με την βάση δεδομένων. ", "Πρόβλημα σύνδεσης", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             Application.Run(new MainMenu(services));
         }

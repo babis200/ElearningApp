@@ -32,14 +32,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.saveButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.addSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.subjectsLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
+            this.subjectsListBox = new MaterialSkin2DotNet.Controls.MaterialListBox();
             this.teachersDGV = new System.Windows.Forms.DataGridView();
             this.TeacherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.descriptionMultiLineTextBox = new MaterialSkin2DotNet.Controls.MaterialMultiLineTextBox();
             this.nameTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
-            this.subjectsListBox = new MaterialSkin2DotNet.Controls.MaterialListBox();
-            this.subjectsLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.addSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -81,6 +81,7 @@
             this.saveButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.saveButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.saveButton.Name = "saveButton";
+            this.saveButton.NoAccentTextColor = System.Drawing.Color.Empty;
             this.saveButton.Size = new System.Drawing.Size(118, 36);
             this.saveButton.TabIndex = 0;
             this.saveButton.Text = "Αποθήκευση";
@@ -104,6 +105,45 @@
             this.panel1.Size = new System.Drawing.Size(451, 659);
             this.panel1.TabIndex = 0;
             // 
+            // addSubjectButton
+            // 
+            this.addSubjectButton.Depth = 0;
+            this.addSubjectButton.Icon = global::ElearningApp.Properties.Resources.icons8_add_24;
+            this.addSubjectButton.Location = new System.Drawing.Point(336, 460);
+            this.addSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.addSubjectButton.Name = "addSubjectButton";
+            this.addSubjectButton.Size = new System.Drawing.Size(56, 56);
+            this.addSubjectButton.TabIndex = 6;
+            this.addSubjectButton.Text = "materialFloatingActionButton1";
+            this.addSubjectButton.UseVisualStyleBackColor = true;
+            this.addSubjectButton.Click += new System.EventHandler(this.addSubjectButton_Click);
+            // 
+            // subjectsLabel
+            // 
+            this.subjectsLabel.AutoSize = true;
+            this.subjectsLabel.Depth = 0;
+            this.subjectsLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.subjectsLabel.Location = new System.Drawing.Point(56, 438);
+            this.subjectsLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.subjectsLabel.Name = "subjectsLabel";
+            this.subjectsLabel.Size = new System.Drawing.Size(72, 19);
+            this.subjectsLabel.TabIndex = 5;
+            this.subjectsLabel.Text = "Καφάλαια";
+            // 
+            // subjectsListBox
+            // 
+            this.subjectsListBox.BackColor = System.Drawing.Color.White;
+            this.subjectsListBox.BorderColor = System.Drawing.Color.LightGray;
+            this.subjectsListBox.Depth = 0;
+            this.subjectsListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.subjectsListBox.Location = new System.Drawing.Point(56, 460);
+            this.subjectsListBox.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.subjectsListBox.Name = "subjectsListBox";
+            this.subjectsListBox.SelectedIndex = -1;
+            this.subjectsListBox.SelectedItem = null;
+            this.subjectsListBox.Size = new System.Drawing.Size(255, 155);
+            this.subjectsListBox.TabIndex = 4;
+            // 
             // teachersDGV
             // 
             this.teachersDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -111,6 +151,7 @@
             this.TeacherName});
             this.teachersDGV.Location = new System.Drawing.Point(56, 109);
             this.teachersDGV.Name = "teachersDGV";
+            this.teachersDGV.RowHeadersVisible = false;
             this.teachersDGV.RowTemplate.Height = 25;
             this.teachersDGV.Size = new System.Drawing.Size(336, 150);
             this.teachersDGV.TabIndex = 3;
@@ -149,6 +190,7 @@
             // 
             // nameTextBox
             // 
+            this.nameTextBox.AnimateReadOnly = false;
             this.nameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameTextBox.Depth = 0;
             this.nameTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -163,45 +205,6 @@
             this.nameTextBox.TabIndex = 0;
             this.nameTextBox.Text = "";
             this.nameTextBox.TrailingIcon = null;
-            // 
-            // subjectsListBox
-            // 
-            this.subjectsListBox.BackColor = System.Drawing.Color.White;
-            this.subjectsListBox.BorderColor = System.Drawing.Color.LightGray;
-            this.subjectsListBox.Depth = 0;
-            this.subjectsListBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.subjectsListBox.Location = new System.Drawing.Point(56, 460);
-            this.subjectsListBox.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.subjectsListBox.Name = "subjectsListBox";
-            this.subjectsListBox.SelectedIndex = -1;
-            this.subjectsListBox.SelectedItem = null;
-            this.subjectsListBox.Size = new System.Drawing.Size(255, 155);
-            this.subjectsListBox.TabIndex = 4;
-            // 
-            // subjectsLabel
-            // 
-            this.subjectsLabel.AutoSize = true;
-            this.subjectsLabel.Depth = 0;
-            this.subjectsLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.subjectsLabel.Location = new System.Drawing.Point(56, 438);
-            this.subjectsLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.subjectsLabel.Name = "subjectsLabel";
-            this.subjectsLabel.Size = new System.Drawing.Size(72, 19);
-            this.subjectsLabel.TabIndex = 5;
-            this.subjectsLabel.Text = "Καφάλαια";
-            // 
-            // addSubjectButton
-            // 
-            this.addSubjectButton.Depth = 0;
-            this.addSubjectButton.Icon = global::ElearningApp.Properties.Resources.icons8_add_24;
-            this.addSubjectButton.Location = new System.Drawing.Point(336, 460);
-            this.addSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.addSubjectButton.Name = "addSubjectButton";
-            this.addSubjectButton.Size = new System.Drawing.Size(56, 56);
-            this.addSubjectButton.TabIndex = 6;
-            this.addSubjectButton.Text = "materialFloatingActionButton1";
-            this.addSubjectButton.UseVisualStyleBackColor = true;
-            this.addSubjectButton.Click += new System.EventHandler(this.addSubjectButton_Click);
             // 
             // AddEditCourseView
             // 

@@ -1,34 +1,17 @@
-﻿namespace ElearningApp
+﻿using System.ComponentModel;
+
+namespace ElearningApp
 {
-    internal class AppEnums
+    public class AppEnums
     {
-        public class Result<T, E>
+        public enum Work
         {
-            public T Ok { get; set; }
-
-            public E Err { get; set; }
-
-            public bool IsOk
-            {
-                get
-                {
-                    return Ok != null;
-                }
-            }
-
-            public bool IsErr
-            {
-                get
-                {
-                    return Err != null;
-                }
-            }
-
-            public T unwarp()
-            {
-                return Ok;
-            }
-
+            [Description("Προσθήκη")]
+            Add,
+            [Description("Επεξεργασία")]
+            Edit,
+            [Description("Προβολή")]
+            Preview
         }
     }
 }

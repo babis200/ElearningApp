@@ -1,9 +1,12 @@
-
 using ElearningModels;
 
 using ElearningServices;
 
 using MaterialSkin2DotNet.Controls;
+
+using System.Windows.Forms;
+
+using static ElearningApp.AppEnums;
 
 namespace ElearningApp
 {
@@ -11,28 +14,63 @@ namespace ElearningApp
     {
         ServiceCollection _services;
 
+        List<CourseModel> _courses;
+
+        CourseModel _selectedCourse;
+
         public MainMenu(ServiceCollection services)
         {
             InitializeComponent();
             _services = services;
+            _courses = _services.CourseService.GetAll();
+
+            UpdateView();
         }
 
-        private void coursesListView_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void UpdateView()
         {
-
-        } 
-
+            courseDGV.DataSource = null;
+            courseDGV.DataSource = _courses;
+        }
+       
         private void newCourseButton_Click(object sender, EventArgs e)
         {
+            if (!ViewTools.IsFormOpened<AddEditCourseView>())
+            {
+                var courseView = new AddEditCourseView(Work.Add, _services, new CourseModel(), UpdateView);
+                courseView.Show();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<AddEditCourseView>().Focus();
+            }
+        }
+
+        private void courseDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            _selectedCourse = GetSelectedCourse();
+
             if (!ViewTools.IsFormOpened<CourseView>())
             {
-                var courseView = new AddEditCourseView(_services, new CourseModel());
-                courseView.Show();
+                var subjectView = new CourseView(_services.CourseService, _selectedCourse);
+                subjectView.Show();
             }
             else
             {
                 ViewTools.GetOpenedForm<CourseView>().Focus();
             }
+        }
+
+        CourseModel GetSelectedCourse()
+        {
+            int id = 0;
+            if (courseDGV.CurrentRow != null)
+            {
+                id = Convert.ToInt32(courseDGV.CurrentRow.Cells[0].Value.ToString());
+            }
+
+            return _courses.FirstOrDefault(x => x.Id == id);
         }
     }
 }

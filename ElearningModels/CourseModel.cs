@@ -13,6 +13,15 @@ namespace ElearningModels
 
         public List<string> Teachers { get; set; }
 
+        [NotMapped]
+        public string TeachersString 
+        { 
+            get 
+            { 
+                return String.Join(',', Teachers.ToArray()); 
+            }
+        }
+
         public string Description { get; set; }
 
         public List<SubjectModel> Subjects { get; set; }

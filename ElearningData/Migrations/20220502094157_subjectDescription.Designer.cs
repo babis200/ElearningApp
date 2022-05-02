@@ -3,6 +3,7 @@ using System;
 using ElearningData;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElearningData.Migrations
 {
     [DbContext(typeof(ElearningDBContext))]
-    partial class ElearningDBContextModelSnapshot : ModelSnapshot
+    [Migration("20220502094157_subjectDescription")]
+    partial class subjectDescription
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
