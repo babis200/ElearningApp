@@ -114,13 +114,15 @@ namespace ElearningApp
         {
             //TODO - validate course
             UpdateModel();     
+
+            //TODO - save course
         }
 
         private void addSubjectButton_Click(object sender, EventArgs e)
         {
             if (!ViewTools.IsFormOpened<SubjectView>())
             {
-                var subjectView = new SubjectView(_services.SubjectService, new SubjectModel(), UpdateView);
+                var subjectView = new SubjectView(_services.SubjectService, UpdateView);
                 subjectView.Show();
             }
             else

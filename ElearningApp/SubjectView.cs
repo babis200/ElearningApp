@@ -1,69 +1,86 @@
 ﻿
+using ElearningData.MySQL;
+
 using ElearningModels;
 
 using ElearningServices;
 
 using MaterialSkin2DotNet.Controls;
 
+using System.Windows.Forms;
+
+using static ElearningApp.AppEnums;
+
 namespace ElearningApp
 {
     public partial class SubjectView : MaterialForm
     {
         SubjectService _service;
-        SubjectModel _subject;
+        List<SubjectModel> _subjects;
         Action _updateParent;
 
-        public SubjectView(SubjectService service, SubjectModel subject, Action updateParent)
+        public SubjectView(SubjectService service, Action updateParent)
         {
             InitializeComponent();
             _service = service;
-            _subject = subject;
             _updateParent = updateParent;
         }
 
         private void SubjectView_Load(object sender, EventArgs e)
         {
+            _subjects = _service.GetAll();
             UpdateView();
         }
 
         private void UpdateView()
         {
-            //Name
-            subjectNameTextBox.Text = _subject.Name;
-            foreach (var resource in _subject.Resources)
-            {
-                resourcesDGV.Rows.Add(resource);
-            }
-
-            foreach (var exam in _subject.Exams)
-            {
-                resourcesDGV.Rows.Add(exam);
-            }
+            subjectsDGV.DataSource = null;
+            subjectsDGV.DataSource = _subjects;
         }
+
 
         private void subjectNameTextBox_TrailingIconClick(object sender, EventArgs e)
         {
             subjectNameTextBox.Enabled = !subjectNameTextBox.Enabled;
         }
-
-        private void materialFloatingActionButton1_Click(object sender, EventArgs e)
+                
+        private void selectButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void addExamButton_Click(object sender, EventArgs e)
+        private void addSubjectButton_Click(object sender, EventArgs e) => AddEditSubject(Work.Add);
+        
+        private void AddEditSubject(Work workType)
+        {
+            var subject = workType == Work.Add ? new SubjectModel() : GetSelectedSubject();
+            if (subject == null)
+            {
+                MessageBox.Show("Παρακαλώ επιλέξτε ένα κεφάλαιο", "Δεν υπάρχει επιλεγμέμη γραμμή", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var addView = new AddEditSubjectView(workType, subject, _service, UpdateView);
+            addView.ShowDialog(this);
+            addView.Dispose();
+            UpdateView();
+        }
+
+        private void deleteSubjectButton_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void deleteExamButton_Click(object sender, EventArgs e)
+        private void editSubjectButton_Click(object sender, EventArgs e) => AddEditSubject(Work.Edit);
+
+        SubjectModel GetSelectedSubject()
         {
+            int id = 0;
+            if (subjectsDGV.CurrentRow != null)
+            {
+                id = Convert.ToInt32(subjectsDGV.CurrentRow.Cells[0].Value.ToString());
+            }
 
-        }
-
-        private void addResourceButton_Click(object sender, EventArgs e)
-        {
-
+            return _subjects.FirstOrDefault(x => x.Id == id);
         }
     }
 }
