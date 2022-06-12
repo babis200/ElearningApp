@@ -64,10 +64,10 @@ namespace ElearningApp
 
         CourseModel GetSelectedCourse()
         {
-            int id = 0;
+            Guid id = Guid.Empty;
             if (courseDGV.CurrentRow != null)
             {
-                id = Convert.ToInt32(courseDGV.CurrentRow.Cells[0].Value.ToString());
+                id = Guid.Parse(courseDGV.CurrentRow.Cells[0].Value.ToString());
             }
 
             return _courses.FirstOrDefault(x => x.Id == id);

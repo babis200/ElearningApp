@@ -29,7 +29,7 @@ namespace ElearningServices
             return _courseDatabase.Update(course);
         }
 
-        public CourseModel Get(int id)
+        public CourseModel Get(Guid id)
         {
             return _courseDatabase.Get(id);
         }

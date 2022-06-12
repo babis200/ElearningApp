@@ -11,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(MatchQModel question);
 
-        MatchQModel Get(int id);
+        MatchQModel Get(Guid id);
 
         List<MatchQModel> GetAll();
     }

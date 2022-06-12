@@ -29,7 +29,7 @@ namespace ElearningServices
             return _freeFormQDatabase.Update(question);
         }
 
-        public FreeFormQModel Get(int id)
+        public FreeFormQModel Get(Guid id)
         {
             return _freeFormQDatabase.Get(id);
         }

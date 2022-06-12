@@ -106,7 +106,7 @@ namespace ElearningApp
             foreach (var item in subjectsListBox.Items)
             {
                 //Γνωρίζω ότι στο Tag αποθηκεύω το Id toy Subject
-                _course.Subjects.Add(_services.SubjectService.Get((int)item.Tag));
+                _course.Subjects.Add(_services.SubjectService.Get((Guid)item.Tag));
             }
         }
 
@@ -122,7 +122,7 @@ namespace ElearningApp
         {
             if (!ViewTools.IsFormOpened<SubjectView>())
             {
-                var subjectView = new SubjectView(_services.SubjectService, UpdateView);
+                var subjectView = new SubjectView(_services, UpdateView);
                 subjectView.Show();
             }
             else

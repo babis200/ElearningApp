@@ -11,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(TrueFalseQModel question);
 
-        TrueFalseQModel Get(int id);
+        TrueFalseQModel Get(Guid id);
 
         List<TrueFalseQModel> GetAll();
     }

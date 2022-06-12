@@ -29,7 +29,7 @@ namespace ElearningServices
             return _subjectDatabase.Update(subject);
         }
 
-        public SubjectModel Get(int id)
+        public SubjectModel Get(Guid id)
         {
             return _subjectDatabase.Get(id);
         }

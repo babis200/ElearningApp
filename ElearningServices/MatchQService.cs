@@ -29,7 +29,7 @@ namespace ElearningServices
             return _matchQDatabase.Update(question);
         }
 
-        public MatchQModel Get(int id)
+        public MatchQModel Get(Guid id)
         {
             return _matchQDatabase.Get(id);
         }

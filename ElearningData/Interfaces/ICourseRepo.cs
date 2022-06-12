@@ -11,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(CourseModel course);
 
-        CourseModel Get(int id);
+        CourseModel Get(Guid id);
 
         List<CourseModel> GetAll();
     }

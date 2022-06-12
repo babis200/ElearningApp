@@ -15,20 +15,20 @@ namespace ElearningApp
 {
     public partial class SubjectView : MaterialForm
     {
-        SubjectService _service;
+        ServiceCollection _services;
         List<SubjectModel> _subjects;
         Action _updateParent;
 
-        public SubjectView(SubjectService service, Action updateParent)
+        public SubjectView(ServiceCollection services, Action updateParent)
         {
             InitializeComponent();
-            _service = service;
+            _services = services;
             _updateParent = updateParent;
         }
 
         private void SubjectView_Load(object sender, EventArgs e)
         {
-            _subjects = _service.GetAll();
+            _subjects = _services.SubjectService.GetAll();
             UpdateView();
         }
 
@@ -59,7 +59,7 @@ namespace ElearningApp
                 MessageBox.Show("Παρακαλώ επιλέξτε ένα κεφάλαιο", "Δεν υπάρχει επιλεγμέμη γραμμή", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var addView = new AddEditSubjectView(workType, subject, _service, UpdateView);
+            var addView = new AddEditSubjectView(workType, subject, _services, UpdateView);
             addView.ShowDialog(this);
             addView.Dispose();
             UpdateView();
@@ -74,10 +74,10 @@ namespace ElearningApp
 
         SubjectModel GetSelectedSubject()
         {
-            int id = 0;
+            Guid id = Guid.Empty;
             if (subjectsDGV.CurrentRow != null)
             {
-                id = Convert.ToInt32(subjectsDGV.CurrentRow.Cells[0].Value.ToString());
+                id = Guid.Parse(subjectsDGV.CurrentRow.Cells[0].Value.ToString());
             }
 
             return _subjects.FirstOrDefault(x => x.Id == id);

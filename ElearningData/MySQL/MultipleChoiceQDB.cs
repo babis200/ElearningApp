@@ -56,7 +56,7 @@ namespace ElearningData.MySQL
 
         //Η μέθοδος που κάνει κλήση στη βάση και επιστρέφει το αντικείμενο 
         //με βάση το id του. Αν δεν βρει κάτι επιστρέφει null
-        public MultipleChoiceQModel Get(int id)
+        public MultipleChoiceQModel Get(Guid id)
         {
             return _context.MultipleChoiceQs
                 .First(x => x.Id == id);

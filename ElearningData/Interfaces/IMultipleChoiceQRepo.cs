@@ -11,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(MultipleChoiceQModel question);
 
-        MultipleChoiceQModel Get(int id);
+        MultipleChoiceQModel Get(Guid id);
 
         List<MultipleChoiceQModel> GetAll();
     }

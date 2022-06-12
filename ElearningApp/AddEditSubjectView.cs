@@ -75,7 +75,7 @@ namespace ElearningApp
                 _subject.Resources.Add(row.Cells[0].Value.ToString());
 
             foreach (DataGridViewRow row in examsDGV.Rows)
-                _subject.Exams.Add(_services.ExamService.Get((int)row.Cells["Id"].Value));
+                _subject.Exams.Add(_services.ExamService.Get((Guid)row.Cells["Id"].Value));
         }
 
         private void addResourcesButton_Click(object sender, EventArgs e)

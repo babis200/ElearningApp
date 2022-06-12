@@ -58,7 +58,7 @@ namespace ElearningData.MySQL
 
         //Η μέθοδος που κάνει κλήση στη βάση και επιστρέφει το αντικείμενο 
         //με βάση το id του. Αν δεν βρει κάτι επιστρέφει null
-        public CourseModel Get(int id)
+        public CourseModel Get(Guid id)
         {
             return _context.Courses
                 .Include(c => c.Subjects)

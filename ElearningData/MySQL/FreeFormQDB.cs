@@ -56,7 +56,7 @@ namespace ElearningData.MySQL
 
         //Η μέθοδος που κάνει κλήση στη βάση και επιστρέφει το αντικείμενο 
         //με βάση το id του. Αν δεν βρει κάτι επιστρέφει null
-        public FreeFormQModel Get(int id)
+        public FreeFormQModel Get(Guid id)
         {
             return _context.FreeFormQs
                 .First(x => x.Id == id);

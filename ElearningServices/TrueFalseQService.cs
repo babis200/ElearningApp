@@ -29,7 +29,7 @@ namespace ElearningServices
             return _trueFalseDatabase.Update(question);
         }
 
-        public TrueFalseQModel Get(int id)
+        public TrueFalseQModel Get(Guid id)
         {
             return _trueFalseDatabase.Get(id);
         }

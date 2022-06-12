@@ -11,7 +11,7 @@ namespace ElearningData.Interfaces
 
         string Update(FreeFormQModel question);
 
-        FreeFormQModel Get(int id);
+        FreeFormQModel Get(Guid id);
 
         List<FreeFormQModel> GetAll();
     }
