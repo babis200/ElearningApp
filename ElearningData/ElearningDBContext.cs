@@ -2,6 +2,7 @@
 using ElearningModels.Questions;
 
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace ElearningData
 {
@@ -45,7 +46,17 @@ namespace ElearningData
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-           builder.Entity<CourseModel>()
+            //TODO - make sure this doesnt break anything
+            var stringValueComparer = new ValueComparer<List<string>>(
+                (c1, c2) => c1.SequenceEqual(c2),
+                c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
+                c => c.ToList());
+            var intValueComparer = new ValueComparer<List<int>>(
+                (c1, c2) => c1.SequenceEqual(c2),
+                c => c.Aggregate(0, (a, v) => HashCode.Combine(a, v.GetHashCode())),
+                c => c.ToList());
+
+            builder.Entity<CourseModel>()
                  .HasMany(p => p.Subjects)
                  .WithOne()
                  .OnDelete(DeleteBehavior.Cascade);
@@ -59,37 +70,49 @@ namespace ElearningData
                 .Property(e => e.Choices)
                 .HasConversion(
                     v => string.Join(',', v),
-                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList())
+                .Metadata
+                .SetValueComparer(stringValueComparer);
 
             builder.Entity<MatchQModel>()
                 .Property(e => e.Answers)
                 .HasConversion(
                     v => string.Join(',', v),
-                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList())
+                .Metadata
+                .SetValueComparer(stringValueComparer);
 
             builder.Entity<MultipleChoiceQModel>()
                 .Property(e => e.Choices)
                 .HasConversion(
                     v => string.Join(',', v),
-                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList())
+                .Metadata
+                .SetValueComparer(stringValueComparer);
 
             builder.Entity<CourseModel>()
                 .Property(e => e.Teachers)
                 .HasConversion(
                     v => string.Join(',', v),
-                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList())
+                .Metadata
+                .SetValueComparer(stringValueComparer);
 
             builder.Entity<ExamModel>()
                 .Property(e => e.Grades)
                 .HasConversion(
                     v => string.Join(',', v.ToString()),
-                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList());
+                    v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList())
+                    .Metadata
+                    .SetValueComparer(intValueComparer);
 
             builder.Entity<SubjectModel>()
                .Property(e => e.Resources)
                .HasConversion(
                    v => string.Join(',', v),
-                   v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList());
+                   v => v.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList())
+                .Metadata
+                .SetValueComparer(stringValueComparer);
 
         }
     }
