@@ -5,8 +5,8 @@ namespace ElearningModels
 {
     public class CourseModel
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Υποχρεωτικό πεδίο")]
         public string Name { get; set; }

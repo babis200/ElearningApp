@@ -13,7 +13,7 @@ namespace ElearningModels
     public class Question
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         
         public QuestionType QType { get; set; }
 

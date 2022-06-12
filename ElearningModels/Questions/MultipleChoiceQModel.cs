@@ -8,7 +8,7 @@ namespace ElearningModels.Questions
     public class MultipleChoiceQModel
     {
         [Key]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         public string Question { get; set; }
 
