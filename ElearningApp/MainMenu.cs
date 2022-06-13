@@ -21,6 +21,7 @@ namespace ElearningApp
         public MainMenu(ServiceCollection services)
         {
             InitializeComponent();
+            courseDGV.AutoGenerateColumns = false;
             _services = services;
             _courses = _services.CourseService.GetAll();
 

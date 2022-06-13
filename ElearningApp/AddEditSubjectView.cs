@@ -87,7 +87,15 @@ namespace ElearningApp
 
         private void addExamButton_Click(object sender, EventArgs e)
         {
-
+            if (!ViewTools.IsFormOpened<ExamView>())
+            {
+                var subjectView = new AddEditExamView(Work.Add, new ExamModel(), _services.ExamService, UpdateView);
+                subjectView.Show();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<SubjectView>().Focus();
+            }
         }
 
         private void resourcesDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

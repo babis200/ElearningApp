@@ -94,7 +94,7 @@ namespace ElearningApp
             _course.Teachers = new List<string>();
             foreach (DataGridViewRow row in teachersDGV.Rows)
             {
-                _course.Teachers.Add(row.Cells[0].Value.ToString()); 
+                _course.Teachers.Add(row.Cells["TeacherName"].FormattedValue.ToString()); 
             }
         }
 
@@ -113,9 +113,27 @@ namespace ElearningApp
         private void saveButton_Click(object sender, EventArgs e)
         {
             //TODO - validate course
-            UpdateModel();     
+            UpdateModel();
 
-            //TODO - save course
+            try
+            {
+                switch (_work)
+                {
+                    case Work.Add:
+                        _services.CourseService.Add(_course);
+                        break;
+                    case Work.Edit:
+                        _services.CourseService.Update(_course);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Πρόβλημα ενημέρωσης", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            MessageBox.Show("Η βάση ενημερώθηκε επιτυχώς.", "Ενημέρωση βάσης", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Invoke(_updateParent);
         }
 
         private void addSubjectButton_Click(object sender, EventArgs e)

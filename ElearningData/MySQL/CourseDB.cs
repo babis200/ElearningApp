@@ -63,7 +63,7 @@ namespace ElearningData.MySQL
             return _context.Courses
                 .Include(c => c.Subjects)
                 .Include(c => c.Exams)
-                .First(x => x.Id == id);
+                .FirstOrDefault(x => x.Id == id);
         }
 
         //Η μέθοδός που επιστρέφει μια λίστα με όλα τα αντικείμενα που υπάρχουν στη βάση

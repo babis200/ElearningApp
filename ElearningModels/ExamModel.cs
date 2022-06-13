@@ -12,6 +12,12 @@ namespace ElearningModels
 
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
+        public int MinGrade { get; set; }
+
+        public int MaxGrade { get; set; }
+
         //public SubjectModel Subjects { get; set; }
 
         //Meant to store grades of students and show how difficult this exam is
