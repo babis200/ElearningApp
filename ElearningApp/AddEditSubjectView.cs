@@ -28,6 +28,10 @@ namespace ElearningApp
         public AddEditSubjectView(Work workType, SubjectModel subject, ServiceCollection services, Action updateParent)
         {
             InitializeComponent();
+            resourcesDGV.AutoGenerateColumns = false;
+            examsDGV.AutoGenerateColumns = false;
+            
+
             _workType = workType;
             _subject = subject;
             _services = services;
@@ -58,8 +62,11 @@ namespace ElearningApp
             nameTextBox.Text = _subject.Name;
             descriptionTextBox.Text = _subject.Description;
 
-            resourcesDGV.DataSource = null;
-            resourcesDGV.DataSource = _subject.Resources;
+            if(_subject.Resources is null) _subject.Resources = new List<string>();
+            foreach (var resource in _subject.Resources)
+            {
+                resourcesDGV.Rows.Add(resource);
+            }
             
             examsDGV.DataSource = null;
             examsDGV.DataSource = _subject.Exams;
@@ -80,9 +87,11 @@ namespace ElearningApp
 
         private void addResourcesButton_Click(object sender, EventArgs e)
         {
-            //Add resource functionality
-            //open file explorer
+            resourceFileDialog.ShowDialog();
 
+            if (_subject.Resources is null)_subject.Resources = new List<string>();            
+            _subject.Resources.Add(resourceFileDialog.FileName);
+            UpdateView();
         }
 
         private void addExamButton_Click(object sender, EventArgs e)
@@ -100,8 +109,11 @@ namespace ElearningApp
 
         private void resourcesDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //Edit resource functionality
-            //open file explorer
+            resourceFileDialog.ShowDialog();
+
+            if (_subject.Resources is null) _subject.Resources = new List<string>();
+            _subject.Resources.Add(resourceFileDialog.FileName);
+            UpdateView();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -133,6 +145,15 @@ namespace ElearningApp
         private void examsDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void resourcesDGV_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.Equals(Keys.Delete) && !resourcesDGV.CurrentCell.IsInEditMode)
+            {
+                if (resourcesDGV.CurrentRow != null)
+                    _subject.Resources.Remove(resourcesDGV.CurrentRow.Cells[0].Value.ToString());
+            }
         }
     }
 }

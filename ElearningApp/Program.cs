@@ -35,7 +35,20 @@ namespace ElearningApp
                 MessageBox.Show("Υπάρχει πρόβλημα σύνδεσης με την βάση δεδομένων. ", "Πρόβλημα σύνδεσης", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+//15/6
+            //TODO - CRUD Subject
+            //TODO - CRUD Course
+            //TODO - CRUD Questions
+                //FreeForm
+                //Match
+                //MultipleChoice
+                //TrueFalse
+            
+            //TODO - CRUD Exam
+            //TODO - Run Exam
+            //TODO - Save Stats for exams / Subject progress / Course progress
+            //TODO - Messages 
+            
             Application.Run(new MainMenu(services));
         }
     }

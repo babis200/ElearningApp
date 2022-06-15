@@ -39,12 +39,13 @@
             this.examsLabel = new System.Windows.Forms.Label();
             this.resourcesLabel = new System.Windows.Forms.Label();
             this.examsDGV = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resourcesDGV = new System.Windows.Forms.DataGridView();
             this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.saveButton = new MaterialSkin2DotNet.Controls.MaterialButton();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.resourceFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -221,6 +222,21 @@
             this.examsDGV.TabIndex = 2;
             this.examsDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.examsDGV_CellDoubleClick);
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Κωδικός";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // ExamName
+            // 
+            this.ExamName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ExamName.HeaderText = "Όνομα διαγωνίσματος";
+            this.ExamName.Name = "ExamName";
+            this.ExamName.ReadOnly = true;
+            // 
             // resourcesDGV
             // 
             this.resourcesDGV.AllowUserToOrderColumns = true;
@@ -234,6 +250,8 @@
             this.resourcesDGV.Size = new System.Drawing.Size(250, 168);
             this.resourcesDGV.TabIndex = 3;
             this.resourcesDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.resourcesDGV_CellDoubleClick);
+            this.resourcesDGV.KeyDown += new System.Windows.Forms.KeyEventHandler(this.resourcesDGV_KeyDown);
+            this.resourcesDGV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.resourcesDGV_KeyPress);
             // 
             // Path
             // 
@@ -269,21 +287,6 @@
             this.saveButton.UseAccentColor = false;
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-            // 
-            // Id
-            // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Κωδικός";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // ExamName
-            // 
-            this.ExamName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExamName.HeaderText = "Όνομα διαγωνίσματος";
-            this.ExamName.Name = "ExamName";
-            this.ExamName.ReadOnly = true;
             // 
             // AddEditSubjectView
             // 
@@ -326,5 +329,6 @@
         private DataGridViewTextBoxColumn Path;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn ExamName;
+        private OpenFileDialog resourceFileDialog;
     }
 }
