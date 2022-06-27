@@ -13,6 +13,8 @@ namespace ElearningApp
 
         ServiceCollection _services;
 
+        SubjectModel _selectedSubject;
+
         public CourseView(ServiceCollection services ,CourseModel course)
         {
             InitializeComponent();
@@ -54,6 +56,50 @@ namespace ElearningApp
             {
                 ViewTools.GetOpenedForm<AddEditCourseView>().Focus();
             }
+        }
+
+        private void examButton_Click(object sender, EventArgs e)
+        {
+            //TODO - agregate questions from subject exams
+        }
+
+        private void readSubjectButton_Click(object sender, EventArgs e)
+        {
+            _selectedSubject = GetSelectedSubject();
+            if (!ViewTools.IsFormOpened<AddEditSubjectView>())
+            {
+                var subjectView = new AddEditSubjectView(Work.Preview, _selectedSubject, _services, UpdateView);
+                subjectView.ShowDialog();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<AddEditSubjectView>().Focus();
+            }
+        }
+
+        private void examSubjectButton_Click(object sender, EventArgs e)
+        {
+            _selectedSubject = GetSelectedSubject();
+            if (!ViewTools.IsFormOpened<ExaminationView>())
+            {
+                var examView = new ExaminationView(_services.ExamService, _selectedSubject.Exam);
+                examView.ShowDialog();
+            }
+            else
+            {
+                ViewTools.GetOpenedForm<ExaminationView>().Focus();
+            }
+        }
+
+        SubjectModel GetSelectedSubject()
+        {
+            Guid id = Guid.Empty;
+            if (subjectsDGV.CurrentRow != null)
+            {
+                id = Guid.Parse(subjectsDGV.CurrentRow.Cells["Id"].Value.ToString());
+            }
+
+            return _course?.Subjects?.FirstOrDefault(x => x.Id == id);
         }
     }
 }

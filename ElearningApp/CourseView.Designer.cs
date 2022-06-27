@@ -36,16 +36,19 @@
             this.descriptionContentLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.descriptionLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.examButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.readSubjectButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.examSubjectButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.subjectsLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.subjectsDGV = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.editCourseButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.teachersLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.examButton = new MaterialSkin2DotNet.Controls.MaterialButton();
-            this.SubName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -156,6 +159,26 @@
             this.panel5.Size = new System.Drawing.Size(382, 135);
             this.panel5.TabIndex = 1;
             // 
+            // examButton
+            // 
+            this.examButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.examButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.examButton.Depth = 0;
+            this.examButton.HighEmphasis = true;
+            this.examButton.Icon = null;
+            this.examButton.Location = new System.Drawing.Point(144, 48);
+            this.examButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.examButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.examButton.Name = "examButton";
+            this.examButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.examButton.Size = new System.Drawing.Size(84, 36);
+            this.examButton.TabIndex = 0;
+            this.examButton.Text = "Εξέταση";
+            this.examButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.examButton.UseAccentColor = false;
+            this.examButton.UseVisualStyleBackColor = true;
+            this.examButton.Click += new System.EventHandler(this.examButton_Click);
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
@@ -173,6 +196,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.readSubjectButton);
+            this.panel4.Controls.Add(this.examSubjectButton);
             this.panel4.Controls.Add(this.subjectsLabel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
@@ -180,13 +205,53 @@
             this.panel4.Size = new System.Drawing.Size(382, 46);
             this.panel4.TabIndex = 0;
             // 
+            // readSubjectButton
+            // 
+            this.readSubjectButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.readSubjectButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.readSubjectButton.Depth = 0;
+            this.readSubjectButton.HighEmphasis = true;
+            this.readSubjectButton.Icon = null;
+            this.readSubjectButton.Location = new System.Drawing.Point(190, 8);
+            this.readSubjectButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.readSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.readSubjectButton.Name = "readSubjectButton";
+            this.readSubjectButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.readSubjectButton.Size = new System.Drawing.Size(96, 36);
+            this.readSubjectButton.TabIndex = 4;
+            this.readSubjectButton.Text = "Διαβασμα";
+            this.readSubjectButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.readSubjectButton.UseAccentColor = false;
+            this.readSubjectButton.UseVisualStyleBackColor = true;
+            this.readSubjectButton.Click += new System.EventHandler(this.readSubjectButton_Click);
+            // 
+            // examSubjectButton
+            // 
+            this.examSubjectButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.examSubjectButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.examSubjectButton.Depth = 0;
+            this.examSubjectButton.HighEmphasis = true;
+            this.examSubjectButton.Icon = null;
+            this.examSubjectButton.Location = new System.Drawing.Point(294, 6);
+            this.examSubjectButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.examSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.examSubjectButton.Name = "examSubjectButton";
+            this.examSubjectButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.examSubjectButton.Size = new System.Drawing.Size(84, 36);
+            this.examSubjectButton.TabIndex = 3;
+            this.examSubjectButton.Text = "Εξέταση";
+            this.examSubjectButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.examSubjectButton.UseAccentColor = false;
+            this.examSubjectButton.UseVisualStyleBackColor = true;
+            this.examSubjectButton.Click += new System.EventHandler(this.examSubjectButton_Click);
+            // 
             // subjectsLabel
             // 
             this.subjectsLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.subjectsLabel.AutoSize = true;
             this.subjectsLabel.Depth = 0;
             this.subjectsLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.subjectsLabel.Location = new System.Drawing.Point(154, 18);
+            this.subjectsLabel.Location = new System.Drawing.Point(11, 18);
             this.subjectsLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.subjectsLabel.Name = "subjectsLabel";
             this.subjectsLabel.Size = new System.Drawing.Size(72, 19);
@@ -199,6 +264,7 @@
             this.subjectsDGV.AllowUserToDeleteRows = false;
             this.subjectsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.SubName,
             this.subDescription});
             this.subjectsDGV.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -209,6 +275,31 @@
             this.subjectsDGV.RowTemplate.Height = 25;
             this.subjectsDGV.Size = new System.Drawing.Size(382, 224);
             this.subjectsDGV.TabIndex = 1;
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // SubName
+            // 
+            this.SubName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SubName.DataPropertyName = "Name";
+            this.SubName.HeaderText = "Όνομα κεφαλαίου";
+            this.SubName.Name = "SubName";
+            this.SubName.ReadOnly = true;
+            this.SubName.Width = 118;
+            // 
+            // subDescription
+            // 
+            this.subDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.subDescription.DataPropertyName = "Description";
+            this.subDescription.HeaderText = "Περιγραφή";
+            this.subDescription.Name = "subDescription";
+            this.subDescription.ReadOnly = true;
             // 
             // panel1
             // 
@@ -227,7 +318,7 @@
             this.editCourseButton.Location = new System.Drawing.Point(713, 12);
             this.editCourseButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.editCourseButton.Name = "editCourseButton";
-            this.editCourseButton.Size = new System.Drawing.Size(56, 56);
+            this.editCourseButton.Size = new System.Drawing.Size(56, 60);
             this.editCourseButton.TabIndex = 2;
             this.editCourseButton.Text = "materialFloatingActionButton1";
             this.editCourseButton.UseVisualStyleBackColor = true;
@@ -244,42 +335,6 @@
             this.teachersLabel.Size = new System.Drawing.Size(130, 19);
             this.teachersLabel.TabIndex = 1;
             this.teachersLabel.Text = "teacher1, teacher2";
-            // 
-            // examButton
-            // 
-            this.examButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.examButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.examButton.Depth = 0;
-            this.examButton.HighEmphasis = true;
-            this.examButton.Icon = null;
-            this.examButton.Location = new System.Drawing.Point(145, 44);
-            this.examButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.examButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.examButton.Name = "examButton";
-            this.examButton.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.examButton.Size = new System.Drawing.Size(84, 36);
-            this.examButton.TabIndex = 0;
-            this.examButton.Text = "Εξέταση";
-            this.examButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.examButton.UseAccentColor = false;
-            this.examButton.UseVisualStyleBackColor = true;
-            // 
-            // SubName
-            // 
-            this.SubName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SubName.DataPropertyName = "Name";
-            this.SubName.HeaderText = "Όνομα κεφαλαίου";
-            this.SubName.Name = "SubName";
-            this.SubName.ReadOnly = true;
-            this.SubName.Width = 118;
-            // 
-            // subDescription
-            // 
-            this.subDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.subDescription.DataPropertyName = "Description";
-            this.subDescription.HeaderText = "Περιγραφή";
-            this.subDescription.Name = "subDescription";
-            this.subDescription.ReadOnly = true;
             // 
             // CourseView
             // 
@@ -328,6 +383,9 @@
         private Panel panel5;
         private DataGridView subjectsDGV;
         private MaterialSkin2DotNet.Controls.MaterialButton examButton;
+        private MaterialSkin2DotNet.Controls.MaterialButton readSubjectButton;
+        private MaterialSkin2DotNet.Controls.MaterialButton examSubjectButton;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn SubName;
         private DataGridViewTextBoxColumn subDescription;
     }

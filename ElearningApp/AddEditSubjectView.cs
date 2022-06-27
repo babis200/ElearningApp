@@ -29,8 +29,6 @@ namespace ElearningApp
         {
             InitializeComponent();
             resourcesDGV.AutoGenerateColumns = false;
-            examsDGV.AutoGenerateColumns = false;
-            
 
             _workType = workType;
             _subject = subject;
@@ -61,6 +59,7 @@ namespace ElearningApp
         {
             nameTextBox.Text = _subject.Name;
             descriptionTextBox.Text = _subject.Description;
+            examNameTextBox.Text = _subject.Exam?.Name;
 
             ReloadView();
         }
@@ -74,9 +73,6 @@ namespace ElearningApp
             {
                 resourcesDGV.Rows.Add(resource);
             }
-
-            examsDGV.DataSource = null;
-            examsDGV.DataSource = _subject.Exams;
         }
 
         private void UpdateModel()
@@ -87,14 +83,6 @@ namespace ElearningApp
 
             foreach (DataGridViewRow row in resourcesDGV.Rows)
                 _subject.Resources.Add(row.Cells["Path"].Value?.ToString());
-
-            foreach (DataGridViewRow row in examsDGV.Rows)
-            {
-                if (row.Cells["Id"].Value is null) continue;
-                var exam = _services.ExamService.Get((Guid)row.Cells["Id"].Value);
-                if (exam is not null)
-                    _subject.Exams.Add(exam);
-            }
         }
 
         private void addResourcesButton_Click(object sender, EventArgs e)
@@ -117,15 +105,13 @@ namespace ElearningApp
             {
                 var subjectView = new AddEditExamView(Work.Add, ref exam, _services.ExamService, ReloadView);
                 subjectView.ShowDialog();
+                _subject.Exam = exam;
             }
             else
             {
                 ViewTools.GetOpenedForm<ExamView>().Focus();
                 return;
             }
-            if (_subject.Exams is null) _subject.Exams = new List<ExamModel>();
-            _subject.Exams.Add(exam);
-
         }
 
         private void resourcesDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -164,6 +150,19 @@ namespace ElearningApp
                 if (resourcesDGV.CurrentRow != null)
                     _subject.Resources.Remove(resourcesDGV.CurrentRow.Cells[0].Value.ToString());
             }
+        }
+
+        private void delExamButton_Click(object sender, EventArgs e)
+        {
+            //Επιβεβαίωση διαγραφής
+            var value = MessageBox.Show("Είστε σίγουροι ότι θέλετε να διαγράψετε το διαγώνισμα;", "Διαγραφή διαγωνίσματος", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (value == DialogResult.No) return;
+
+            //Διέγραψε τον επιλεγμενο ΦΠΑ            
+            _services.ExamService.Delete(_subject.Exam);
+            MessageBox.Show("Το διαγώνισμα διαγράφηκε επιτυχώς.", "Επιτυχής διαγραφή", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            _subject.Exam = null;
+            UpdateView();
         }
     }
 }

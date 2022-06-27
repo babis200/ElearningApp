@@ -14,6 +14,6 @@ namespace ElearningModels
 
         public List<string> Resources { get; set; }
 
-        public List<ExamModel> Exams { get; set; }
+        public ExamModel Exam { get; set; }
     }
 }

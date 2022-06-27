@@ -61,7 +61,7 @@ namespace ElearningData.MySQL
         public SubjectModel Get(Guid id)
         {
             return _context.Subjects
-                .Include(c => c.Exams)
+                .Include(c => c.Exam)
                 .FirstOrDefault(x => x.Id == id);
         }
 
@@ -69,7 +69,7 @@ namespace ElearningData.MySQL
         public List<SubjectModel> GetAll()
         {
             return _context.Subjects
-                .Include(c => c.Exams)
+                .Include(c => c.Exam)
                 .ToList();
         }
 
@@ -95,7 +95,7 @@ namespace ElearningData.MySQL
         {
             return _context.Subjects
                 .Where(x => x.Name.Contains(subname))
-                .Include(c => c.Exams)
+                .Include(c => c.Exam)
                 .ToList();
         }
         

@@ -30,11 +30,12 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.saveAnsButton = new MaterialSkin2DotNet.Controls.MaterialButton();
-            this.exitButton = new MaterialSkin2DotNet.Controls.MaterialButton();
-            this.previousButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.nextButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.completeButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.nextButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.previousButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.exitButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.saveAnsButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 64);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -66,53 +68,25 @@
             this.panel1.Size = new System.Drawing.Size(788, 84);
             this.panel1.TabIndex = 1;
             // 
-            // saveAnsButton
+            // completeButton
             // 
-            this.saveAnsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.saveAnsButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.saveAnsButton.Depth = 0;
-            this.saveAnsButton.HighEmphasis = true;
-            this.saveAnsButton.Icon = null;
-            this.saveAnsButton.Location = new System.Drawing.Point(516, 26);
-            this.saveAnsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.saveAnsButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.saveAnsButton.Name = "saveAnsButton";
-            this.saveAnsButton.Size = new System.Drawing.Size(158, 36);
-            this.saveAnsButton.TabIndex = 1;
-            this.saveAnsButton.Text = "save answer";
-            this.saveAnsButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.saveAnsButton.UseAccentColor = false;
-            this.saveAnsButton.UseVisualStyleBackColor = true;
-            // 
-            // exitButton
-            // 
-            this.exitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.exitButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.exitButton.Depth = 0;
-            this.exitButton.HighEmphasis = true;
-            this.exitButton.Icon = null;
-            this.exitButton.Location = new System.Drawing.Point(114, 26);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.exitButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(135, 36);
-            this.exitButton.TabIndex = 3;
-            this.exitButton.Text = "Abandon exam";
-            this.exitButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.exitButton.UseAccentColor = false;
-            this.exitButton.UseVisualStyleBackColor = true;
-            // 
-            // previousButton
-            // 
-            this.previousButton.Depth = 0;
-            this.previousButton.Icon = global::ElearningApp.Properties.Resources.icons8_go_back_48;
-            this.previousButton.Location = new System.Drawing.Point(15, 16);
-            this.previousButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.previousButton.Name = "previousButton";
-            this.previousButton.Size = new System.Drawing.Size(56, 56);
-            this.previousButton.TabIndex = 4;
-            this.previousButton.Text = "materialFloatingActionButton1";
-            this.previousButton.UseVisualStyleBackColor = true;
+            this.completeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.completeButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.completeButton.Depth = 0;
+            this.completeButton.HighEmphasis = true;
+            this.completeButton.Icon = null;
+            this.completeButton.Location = new System.Drawing.Point(315, 26);
+            this.completeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.completeButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.completeButton.Name = "completeButton";
+            this.completeButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.completeButton.Size = new System.Drawing.Size(141, 36);
+            this.completeButton.TabIndex = 6;
+            this.completeButton.Text = "Complete Exam";
+            this.completeButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.completeButton.UseAccentColor = false;
+            this.completeButton.UseVisualStyleBackColor = true;
+            this.completeButton.Click += new System.EventHandler(this.completeButton_Click);
             // 
             // nextButton
             // 
@@ -125,24 +99,68 @@
             this.nextButton.TabIndex = 5;
             this.nextButton.Text = "materialFloatingActionButton2";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
-            // completeButton
+            // previousButton
             // 
-            this.completeButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.completeButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.completeButton.Depth = 0;
-            this.completeButton.HighEmphasis = true;
-            this.completeButton.Icon = null;
-            this.completeButton.Location = new System.Drawing.Point(315, 26);
-            this.completeButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.completeButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.completeButton.Name = "completeButton";
-            this.completeButton.Size = new System.Drawing.Size(141, 36);
-            this.completeButton.TabIndex = 6;
-            this.completeButton.Text = "Complete Exam";
-            this.completeButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.completeButton.UseAccentColor = false;
-            this.completeButton.UseVisualStyleBackColor = true;
+            this.previousButton.Depth = 0;
+            this.previousButton.Icon = global::ElearningApp.Properties.Resources.icons8_go_back_48;
+            this.previousButton.Location = new System.Drawing.Point(15, 16);
+            this.previousButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.previousButton.Name = "previousButton";
+            this.previousButton.Size = new System.Drawing.Size(56, 56);
+            this.previousButton.TabIndex = 4;
+            this.previousButton.Text = "materialFloatingActionButton1";
+            this.previousButton.UseVisualStyleBackColor = true;
+            this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.exitButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.exitButton.Depth = 0;
+            this.exitButton.HighEmphasis = true;
+            this.exitButton.Icon = null;
+            this.exitButton.Location = new System.Drawing.Point(114, 26);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.exitButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.exitButton.Name = "exitButton";
+            this.exitButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.exitButton.Size = new System.Drawing.Size(135, 36);
+            this.exitButton.TabIndex = 3;
+            this.exitButton.Text = "Abandon exam";
+            this.exitButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.exitButton.UseAccentColor = false;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // saveAnsButton
+            // 
+            this.saveAnsButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.saveAnsButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.saveAnsButton.Depth = 0;
+            this.saveAnsButton.HighEmphasis = true;
+            this.saveAnsButton.Icon = null;
+            this.saveAnsButton.Location = new System.Drawing.Point(516, 26);
+            this.saveAnsButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.saveAnsButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.saveAnsButton.Name = "saveAnsButton";
+            this.saveAnsButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.saveAnsButton.Size = new System.Drawing.Size(121, 36);
+            this.saveAnsButton.TabIndex = 1;
+            this.saveAnsButton.Text = "save answer";
+            this.saveAnsButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.saveAnsButton.UseAccentColor = false;
+            this.saveAnsButton.UseVisualStyleBackColor = true;
+            this.saveAnsButton.Click += new System.EventHandler(this.saveAnsButton_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(788, 331);
+            this.panel2.TabIndex = 2;
             // 
             // ExaminationView
             // 
@@ -152,6 +170,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ExaminationView";
             this.Text = "ExaminationView";
+            this.Load += new System.EventHandler(this.ExaminationView_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -168,5 +187,6 @@
         private MaterialSkin2DotNet.Controls.MaterialButton exitButton;
         private MaterialSkin2DotNet.Controls.MaterialButton saveAnsButton;
         private MaterialSkin2DotNet.Controls.MaterialButton completeButton;
+        private Panel panel2;
     }
 }

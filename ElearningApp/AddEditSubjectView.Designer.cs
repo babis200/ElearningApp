@@ -38,19 +38,17 @@
             this.addExamButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.examsLabel = new System.Windows.Forms.Label();
             this.resourcesLabel = new System.Windows.Forms.Label();
-            this.examsDGV = new System.Windows.Forms.DataGridView();
             this.resourcesDGV = new System.Windows.Forms.DataGridView();
             this.Path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.saveButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.resourceFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delExamButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.examNameTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox2();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.examsDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesDGV)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -149,11 +147,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.examNameTextBox);
+            this.panel3.Controls.Add(this.delExamButton);
             this.panel3.Controls.Add(this.addResourcesButton);
             this.panel3.Controls.Add(this.addExamButton);
             this.panel3.Controls.Add(this.examsLabel);
             this.panel3.Controls.Add(this.resourcesLabel);
-            this.panel3.Controls.Add(this.examsDGV);
             this.panel3.Controls.Add(this.resourcesDGV);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(3, 202);
@@ -178,7 +177,7 @@
             // 
             this.addExamButton.Depth = 0;
             this.addExamButton.Icon = global::ElearningApp.Properties.Resources.icons8_add_24;
-            this.addExamButton.Location = new System.Drawing.Point(650, 47);
+            this.addExamButton.Location = new System.Drawing.Point(588, 109);
             this.addExamButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             this.addExamButton.Name = "addExamButton";
             this.addExamButton.Size = new System.Drawing.Size(56, 56);
@@ -193,9 +192,9 @@
             this.examsLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.examsLabel.Location = new System.Drawing.Point(380, 14);
             this.examsLabel.Name = "examsLabel";
-            this.examsLabel.Size = new System.Drawing.Size(151, 30);
+            this.examsLabel.Size = new System.Drawing.Size(128, 30);
             this.examsLabel.TabIndex = 5;
-            this.examsLabel.Text = "Διαγώνισματα";
+            this.examsLabel.Text = "Διαγώνισμα";
             // 
             // resourcesLabel
             // 
@@ -206,20 +205,6 @@
             this.resourcesLabel.Size = new System.Drawing.Size(238, 30);
             this.resourcesLabel.TabIndex = 4;
             this.resourcesLabel.Text = "Περιεχόμενο κεφαλαίου";
-            // 
-            // examsDGV
-            // 
-            this.examsDGV.AllowUserToOrderColumns = true;
-            this.examsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.examsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.ExamName});
-            this.examsDGV.Location = new System.Drawing.Point(380, 47);
-            this.examsDGV.Name = "examsDGV";
-            this.examsDGV.RowHeadersVisible = false;
-            this.examsDGV.RowTemplate.Height = 25;
-            this.examsDGV.Size = new System.Drawing.Size(250, 168);
-            this.examsDGV.TabIndex = 2;
             // 
             // resourcesDGV
             // 
@@ -271,21 +256,49 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // Id
+            // delExamButton
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Κωδικός";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
+            this.delExamButton.Depth = 0;
+            this.delExamButton.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
+            this.delExamButton.Location = new System.Drawing.Point(650, 109);
+            this.delExamButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.delExamButton.Name = "delExamButton";
+            this.delExamButton.Size = new System.Drawing.Size(56, 56);
+            this.delExamButton.TabIndex = 8;
+            this.delExamButton.Text = "materialFloatingActionButton1";
+            this.delExamButton.UseVisualStyleBackColor = true;
+            this.delExamButton.Click += new System.EventHandler(this.delExamButton_Click);
             // 
-            // ExamName
+            // examNameTextBox
             // 
-            this.ExamName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ExamName.DataPropertyName = "Name";
-            this.ExamName.HeaderText = "Όνομα διαγωνίσματος";
-            this.ExamName.Name = "ExamName";
-            this.ExamName.ReadOnly = true;
+            this.examNameTextBox.AnimateReadOnly = false;
+            this.examNameTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.examNameTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.examNameTextBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.examNameTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.examNameTextBox.Depth = 0;
+            this.examNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.examNameTextBox.HideSelection = true;
+            this.examNameTextBox.Hint = "Όνομα";
+            this.examNameTextBox.LeadingIcon = null;
+            this.examNameTextBox.Location = new System.Drawing.Point(380, 55);
+            this.examNameTextBox.MaxLength = 32767;
+            this.examNameTextBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.examNameTextBox.Name = "examNameTextBox";
+            this.examNameTextBox.PasswordChar = '\0';
+            this.examNameTextBox.PrefixSuffixText = null;
+            this.examNameTextBox.ReadOnly = false;
+            this.examNameTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.examNameTextBox.SelectedText = "";
+            this.examNameTextBox.SelectionLength = 0;
+            this.examNameTextBox.SelectionStart = 0;
+            this.examNameTextBox.ShortcutsEnabled = true;
+            this.examNameTextBox.Size = new System.Drawing.Size(326, 48);
+            this.examNameTextBox.TabIndex = 4;
+            this.examNameTextBox.TabStop = false;
+            this.examNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.examNameTextBox.TrailingIcon = null;
+            this.examNameTextBox.UseSystemPasswordChar = false;
             // 
             // AddEditSubjectView
             // 
@@ -301,7 +314,6 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.examsDGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resourcesDGV)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -313,7 +325,6 @@
 
         private Panel panel1;
         private DataGridView resourcesDGV;
-        private DataGridView examsDGV;
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel2;
         private MaterialSkin2DotNet.Controls.MaterialMultiLineTextBox2 descriptionTextBox;
@@ -326,8 +337,8 @@
         private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton addExamButton;
         private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton addResourcesButton;
         private DataGridViewTextBoxColumn Path;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn ExamName;
         private OpenFileDialog resourceFileDialog;
+        private MaterialSkin2DotNet.Controls.MaterialFloatingActionButton delExamButton;
+        private MaterialSkin2DotNet.Controls.MaterialTextBox2 examNameTextBox;
     }
 }

@@ -26,7 +26,7 @@ namespace ElearningModels
 
         public List<SubjectModel> Subjects { get; set; }
 
-        public List<ExamModel> Exams { get; set; }
+        public ExamModel Exam { get; set; }
 
     }
 }

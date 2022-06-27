@@ -62,7 +62,7 @@ namespace ElearningData.MySQL
         {
             return _context.Courses
                 .Include(c => c.Subjects)
-                .Include(c => c.Exams)
+                .Include(c => c.Exam)
                 .FirstOrDefault(x => x.Id == id);
         }
 
@@ -71,7 +71,7 @@ namespace ElearningData.MySQL
         {
             return _context.Courses
                 .Include(c => c.Subjects)
-                .Include(c => c.Exams)
+                .Include(c => c.Exam)
                 .ToList();
         }
 

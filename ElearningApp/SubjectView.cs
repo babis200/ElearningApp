@@ -75,19 +75,19 @@ namespace ElearningApp
             //Αν δεν έχει επιλεγεί κάποιο μάθημα
             if (_selectedSubject == null)
             {
-                MessageBox.Show("Παρακαλώ επιλέξτε ένα μάθημα.", "Δεν υπάρχει επιλεγμέμη γραμμή", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Παρακαλώ επιλέξτε ένα κεφάλαιο.", "Δεν υπάρχει επιλεγμέμη γραμμή", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             //Επιβεβαίωση διαγραφής
-            var value = MessageBox.Show("Είστε σίγουροι ότι θέλετε να διαγράψετε το επιλεγμένο μάθημα;", "Διαγραφή μαθήματος", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var value = MessageBox.Show("Είστε σίγουροι ότι θέλετε να διαγράψετε το επιλεγμένο κεφάλαιο;", "Διαγραφή κεφαλαίου", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (value == DialogResult.No) return;
 
             //Διέγραψε τον επιλεγμενο ΦΠΑ            
             _services.SubjectService.Delete(_selectedSubject);
             _subjects = _services.SubjectService.GetAll();
             UpdateView();
-            MessageBox.Show("Το μάθημα διαγράφηκε επιτυχώς.", "Επιτυχής διαγραφή", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Το κεφάλαιο διαγράφηκε επιτυχώς.", "Επιτυχής διαγραφή", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void editSubjectButton_Click(object sender, EventArgs e) => AddEditSubject(Work.Edit);

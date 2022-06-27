@@ -61,11 +61,6 @@ namespace ElearningData
                  .WithOne()
                  .OnDelete(DeleteBehavior.Cascade);
 
-            builder.Entity<CourseModel>()
-                 .HasMany(p => p.Exams)
-                 .WithOne()
-                 .OnDelete(DeleteBehavior.Cascade);
-
             builder.Entity<MatchQModel>()
                 .Property(e => e.Choices)
                 .HasConversion(
