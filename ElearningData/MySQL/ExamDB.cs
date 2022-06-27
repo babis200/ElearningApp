@@ -62,8 +62,8 @@ namespace ElearningData.MySQL
         {
             return _context.Exams
                 .Include(c => c.Questions)
-                .Include(c => c.Grades)
-                .First(x => x.Id == id);
+                //.Include(c => c.Grades)
+                .FirstOrDefault(x => x.Id == id);
         }
 
         //Η μέθοδός που επιστρέφει μια λίστα με όλα τα αντικείμενα που υπάρχουν στη βάση
@@ -71,7 +71,7 @@ namespace ElearningData.MySQL
         {
             return _context.Exams
                 .Include(c => c.Questions)
-                .Include(c => c.Grades)
+                //.Include(c => c.Grades)
                 .ToList();
         }
 

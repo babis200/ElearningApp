@@ -31,14 +31,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.selectButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.subjectsDGV = new System.Windows.Forms.DataGridView();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.editSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.deleteSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
-            this.addSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.subjectNameTextBox = new MaterialSkin2DotNet.Controls.MaterialTextBox();
+            this.addSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.deleteSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.editSubjectButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.subjectsDGV)).BeginInit();
@@ -93,13 +93,12 @@
             this.subjectsDGV.Size = new System.Drawing.Size(788, 244);
             this.subjectsDGV.TabIndex = 2;
             // 
-            // Description
+            // Id
             // 
-            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Περιγραφή";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Κωδικός";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
             // 
             // Title
             // 
@@ -109,12 +108,13 @@
             this.Title.Name = "Title";
             this.Title.ReadOnly = true;
             // 
-            // Id
+            // Description
             // 
-            this.Id.DataPropertyName = "Id";
-            this.Id.HeaderText = "Κωδικός";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
+            this.Description.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Περιγραφή";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
             // 
             // panel1
             // 
@@ -128,31 +128,25 @@
             this.panel1.Size = new System.Drawing.Size(788, 65);
             this.panel1.TabIndex = 1;
             // 
-            // editSubjectButton
+            // subjectNameTextBox
             // 
-            this.editSubjectButton.Depth = 0;
-            this.editSubjectButton.Icon = global::ElearningApp.Properties.Resources.icons8_edit_24;
-            this.editSubjectButton.Location = new System.Drawing.Point(718, 9);
-            this.editSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.editSubjectButton.Name = "editSubjectButton";
-            this.editSubjectButton.Size = new System.Drawing.Size(56, 56);
-            this.editSubjectButton.TabIndex = 0;
-            this.editSubjectButton.Text = "materialFloatingActionButton1";
-            this.editSubjectButton.UseVisualStyleBackColor = true;
-            this.editSubjectButton.Click += new System.EventHandler(this.editSubjectButton_Click);
-            // 
-            // deleteSubjectButton
-            // 
-            this.deleteSubjectButton.Depth = 0;
-            this.deleteSubjectButton.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
-            this.deleteSubjectButton.Location = new System.Drawing.Point(643, 9);
-            this.deleteSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.deleteSubjectButton.Name = "deleteSubjectButton";
-            this.deleteSubjectButton.Size = new System.Drawing.Size(56, 56);
-            this.deleteSubjectButton.TabIndex = 1;
-            this.deleteSubjectButton.Text = "materialFloatingActionButton2";
-            this.deleteSubjectButton.UseVisualStyleBackColor = true;
-            this.deleteSubjectButton.Click += new System.EventHandler(this.deleteSubjectButton_Click);
+            this.subjectNameTextBox.AnimateReadOnly = false;
+            this.subjectNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.subjectNameTextBox.Depth = 0;
+            this.subjectNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.subjectNameTextBox.Hint = "Τίτλος κεφαλαίου";
+            this.subjectNameTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.subjectNameTextBox.LeadingIcon = null;
+            this.subjectNameTextBox.Location = new System.Drawing.Point(14, 9);
+            this.subjectNameTextBox.MaxLength = 50;
+            this.subjectNameTextBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
+            this.subjectNameTextBox.Multiline = false;
+            this.subjectNameTextBox.Name = "subjectNameTextBox";
+            this.subjectNameTextBox.Size = new System.Drawing.Size(203, 50);
+            this.subjectNameTextBox.TabIndex = 3;
+            this.subjectNameTextBox.Text = "";
+            this.subjectNameTextBox.TrailingIcon = global::ElearningApp.Properties.Resources.icons8_search_24;
+            this.subjectNameTextBox.TrailingIconClick += new System.EventHandler(this.subjectNameTextBox_TrailingIconClick_1);
             // 
             // addSubjectButton
             // 
@@ -167,23 +161,31 @@
             this.addSubjectButton.UseVisualStyleBackColor = true;
             this.addSubjectButton.Click += new System.EventHandler(this.addSubjectButton_Click);
             // 
-            // subjectNameTextBox
+            // deleteSubjectButton
             // 
-            this.subjectNameTextBox.AnimateReadOnly = false;
-            this.subjectNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.subjectNameTextBox.Depth = 0;
-            this.subjectNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.subjectNameTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.subjectNameTextBox.LeadingIcon = null;
-            this.subjectNameTextBox.Location = new System.Drawing.Point(14, 9);
-            this.subjectNameTextBox.MaxLength = 50;
-            this.subjectNameTextBox.MouseState = MaterialSkin2DotNet.MouseState.OUT;
-            this.subjectNameTextBox.Multiline = false;
-            this.subjectNameTextBox.Name = "subjectNameTextBox";
-            this.subjectNameTextBox.Size = new System.Drawing.Size(203, 50);
-            this.subjectNameTextBox.TabIndex = 3;
-            this.subjectNameTextBox.Text = "Τίτλος κεφαλαίου";
-            this.subjectNameTextBox.TrailingIcon = global::ElearningApp.Properties.Resources.icons8_search_24;
+            this.deleteSubjectButton.Depth = 0;
+            this.deleteSubjectButton.Icon = global::ElearningApp.Properties.Resources.icons8_delete_48;
+            this.deleteSubjectButton.Location = new System.Drawing.Point(643, 9);
+            this.deleteSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.deleteSubjectButton.Name = "deleteSubjectButton";
+            this.deleteSubjectButton.Size = new System.Drawing.Size(56, 56);
+            this.deleteSubjectButton.TabIndex = 1;
+            this.deleteSubjectButton.Text = "materialFloatingActionButton2";
+            this.deleteSubjectButton.UseVisualStyleBackColor = true;
+            this.deleteSubjectButton.Click += new System.EventHandler(this.deleteSubjectButton_Click);
+            // 
+            // editSubjectButton
+            // 
+            this.editSubjectButton.Depth = 0;
+            this.editSubjectButton.Icon = global::ElearningApp.Properties.Resources.icons8_edit_24;
+            this.editSubjectButton.Location = new System.Drawing.Point(718, 9);
+            this.editSubjectButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.editSubjectButton.Name = "editSubjectButton";
+            this.editSubjectButton.Size = new System.Drawing.Size(56, 56);
+            this.editSubjectButton.TabIndex = 0;
+            this.editSubjectButton.Text = "materialFloatingActionButton1";
+            this.editSubjectButton.UseVisualStyleBackColor = true;
+            this.editSubjectButton.Click += new System.EventHandler(this.editSubjectButton_Click);
             // 
             // tableLayoutPanel1
             // 

@@ -1,13 +1,9 @@
 ﻿
-using ElearningData.MySQL;
-
 using ElearningModels;
 
 using ElearningServices;
 
 using MaterialSkin2DotNet.Controls;
-
-using System.Windows.Forms;
 
 using static ElearningApp.AppEnums;
 
@@ -18,10 +14,12 @@ namespace ElearningApp
         ServiceCollection _services;
         List<SubjectModel> _subjects;
         Action _updateParent;
+        public SubjectModel _selectedSubject;
 
         public SubjectView(ServiceCollection services, Action updateParent)
         {
             InitializeComponent();
+            subjectsDGV.AutoGenerateColumns = false;
             _services = services;
             _updateParent = updateParent;
         }
@@ -46,7 +44,13 @@ namespace ElearningApp
                 
         private void selectButton_Click(object sender, EventArgs e)
         {
-
+            _selectedSubject = GetSelectedSubject();
+            if (_selectedSubject == null)
+            {
+                MessageBox.Show("Παρακαλώ επιλέξτε ένα μάθημα", "Δεν υπάρχει επιλεγμέμη γραμμή", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            this.Close();
         }
 
         private void addSubjectButton_Click(object sender, EventArgs e) => AddEditSubject(Work.Add);
@@ -62,12 +66,28 @@ namespace ElearningApp
             var addView = new AddEditSubjectView(workType, subject, _services, UpdateView);
             addView.ShowDialog(this);
             addView.Dispose();
-            UpdateView();
         }
 
         private void deleteSubjectButton_Click(object sender, EventArgs e)
         {
+            //βρες τoν επιλεγμένo μαθημα
+            _selectedSubject = GetSelectedSubject();
+            //Αν δεν έχει επιλεγεί κάποιο μάθημα
+            if (_selectedSubject == null)
+            {
+                MessageBox.Show("Παρακαλώ επιλέξτε ένα μάθημα.", "Δεν υπάρχει επιλεγμέμη γραμμή", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            //Επιβεβαίωση διαγραφής
+            var value = MessageBox.Show("Είστε σίγουροι ότι θέλετε να διαγράψετε το επιλεγμένο μάθημα;", "Διαγραφή μαθήματος", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (value == DialogResult.No) return;
+
+            //Διέγραψε τον επιλεγμενο ΦΠΑ            
+            _services.SubjectService.Delete(_selectedSubject);
+            _subjects = _services.SubjectService.GetAll();
+            UpdateView();
+            MessageBox.Show("Το μάθημα διαγράφηκε επιτυχώς.", "Επιτυχής διαγραφή", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void editSubjectButton_Click(object sender, EventArgs e) => AddEditSubject(Work.Edit);
@@ -81,6 +101,14 @@ namespace ElearningApp
             }
 
             return _subjects.FirstOrDefault(x => x.Id == id);
+        }
+
+        private void subjectNameTextBox_TrailingIconClick_1(object sender, EventArgs e)
+        {
+            _subjects = string.IsNullOrWhiteSpace(subjectNameTextBox.Text) ?
+            _services.SubjectService.GetAll() :
+            _services.SubjectService.GetFiltered(subjectNameTextBox.Text);
+            UpdateView();
         }
     }
 }

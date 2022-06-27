@@ -25,5 +25,10 @@ namespace ElearningModels
 
         public List<Question> Questions { get; set; }
 
+        public ExamModel()
+        {
+            Id = Guid.NewGuid();
+        }
+
     }
 }

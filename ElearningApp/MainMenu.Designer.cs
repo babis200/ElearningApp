@@ -34,6 +34,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.newCourseButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             this.courseDGV = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CourseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
@@ -121,6 +122,7 @@
             this.courseDGV.AllowUserToDeleteRows = false;
             this.courseDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.CourseName,
             this.Teacher});
             this.courseDGV.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -131,6 +133,14 @@
             this.courseDGV.Size = new System.Drawing.Size(399, 251);
             this.courseDGV.TabIndex = 1;
             this.courseDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.courseDGV_CellDoubleClick);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // CourseName
             // 
@@ -174,6 +184,7 @@
         private Panel panel3;
         private MaterialSkin2DotNet.Controls.MaterialButton newCourseButton;
         private DataGridView courseDGV;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn CourseName;
         private DataGridViewTextBoxColumn Teacher;
     }

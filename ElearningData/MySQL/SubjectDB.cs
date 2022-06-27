@@ -62,7 +62,7 @@ namespace ElearningData.MySQL
         {
             return _context.Subjects
                 .Include(c => c.Exams)
-                .First(x => x.Id == id);
+                .FirstOrDefault(x => x.Id == id);
         }
 
         //Η μέθοδός που επιστρέφει μια λίστα με όλα τα αντικείμενα που υπάρχουν στη βάση
@@ -90,5 +90,14 @@ namespace ElearningData.MySQL
 
             return error;
         }
+
+        public List<SubjectModel> GetFiltered(string subname)
+        {
+            return _context.Subjects
+                .Where(x => x.Name.Contains(subname))
+                .Include(c => c.Exams)
+                .ToList();
+        }
+        
     }
 }

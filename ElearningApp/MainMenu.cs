@@ -32,7 +32,7 @@ namespace ElearningApp
         private void UpdateView()
         {
             courseDGV.DataSource = null;
-            courseDGV.DataSource = _courses;
+            courseDGV.DataSource = _services.CourseService.GetAll();
         }
        
         private void newCourseButton_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace ElearningApp
             if (!ViewTools.IsFormOpened<AddEditCourseView>())
             {
                 var courseView = new AddEditCourseView(Work.Add, _services, new CourseModel(), UpdateView);
-                courseView.Show();
+                courseView.ShowDialog();
             }
             else
             {
@@ -54,8 +54,8 @@ namespace ElearningApp
 
             if (!ViewTools.IsFormOpened<CourseView>())
             {
-                var subjectView = new CourseView(_services.CourseService, _selectedCourse);
-                subjectView.Show();
+                var subjectView = new CourseView(_services, _selectedCourse);
+                subjectView.ShowDialog();
             }
             else
             {
@@ -68,7 +68,7 @@ namespace ElearningApp
             Guid id = Guid.Empty;
             if (courseDGV.CurrentRow != null)
             {
-                id = Guid.Parse(courseDGV.CurrentRow.Cells[0].Value.ToString());
+                id = (Guid)courseDGV.CurrentRow.Cells[0].Value;
             }
 
             return _courses.FirstOrDefault(x => x.Id == id);

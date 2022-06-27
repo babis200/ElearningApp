@@ -13,7 +13,7 @@ namespace ElearningApp
         ExamService _service;
         Action _updateParent;
 
-        public AddEditExamView(Work workType, ExamModel exam, ExamService service, Action updateParent)
+        public AddEditExamView(Work workType, ref ExamModel exam, ExamService service, Action updateParent)
         {
             InitializeComponent();
             _workType = workType;

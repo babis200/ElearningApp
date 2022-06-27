@@ -92,7 +92,7 @@ namespace ElearningApp
 
             if (!ViewTools.IsFormOpened<AddEditExamView>())
             {
-                var examView = new AddEditExamView(work, exam, _service, ReloadView);
+                var examView = new AddEditExamView(work, ref exam, _service, ReloadView);
                 examView.ShowDialog(this);
             }
             else

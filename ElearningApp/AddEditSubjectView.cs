@@ -62,59 +62,74 @@ namespace ElearningApp
             nameTextBox.Text = _subject.Name;
             descriptionTextBox.Text = _subject.Description;
 
-            if(_subject.Resources is null) _subject.Resources = new List<string>();
+            ReloadView();
+        }
+
+        private void ReloadView()
+        {
+            if (_subject.Resources is null) _subject.Resources = new List<string>();
+            resourcesDGV.Rows.Clear();
+
             foreach (var resource in _subject.Resources)
             {
                 resourcesDGV.Rows.Add(resource);
             }
-            
+
             examsDGV.DataSource = null;
             examsDGV.DataSource = _subject.Exams;
-
         }
 
         private void UpdateModel()
         {
+            if(_subject.Id == Guid.Empty) _subject.Id = Guid.NewGuid();
             _subject.Name = nameTextBox.Text;
             _subject.Description = descriptionTextBox.Text;
 
             foreach (DataGridViewRow row in resourcesDGV.Rows)
-                _subject.Resources.Add(row.Cells[0].Value.ToString());
+                _subject.Resources.Add(row.Cells["Path"].Value?.ToString());
 
             foreach (DataGridViewRow row in examsDGV.Rows)
-                _subject.Exams.Add(_services.ExamService.Get((Guid)row.Cells["Id"].Value));
+            {
+                if (row.Cells["Id"].Value is null) continue;
+                var exam = _services.ExamService.Get((Guid)row.Cells["Id"].Value);
+                if (exam is not null)
+                    _subject.Exams.Add(exam);
+            }
         }
 
         private void addResourcesButton_Click(object sender, EventArgs e)
+            => AddResource();
+
+        private void AddResource()
         {
             resourceFileDialog.ShowDialog();
 
             if (_subject.Resources is null)_subject.Resources = new List<string>();            
             _subject.Resources.Add(resourceFileDialog.FileName);
-            UpdateView();
+            ReloadView();
         }
 
         private void addExamButton_Click(object sender, EventArgs e)
         {
+            var exam = new ExamModel();
+
             if (!ViewTools.IsFormOpened<ExamView>())
             {
-                var subjectView = new AddEditExamView(Work.Add, new ExamModel(), _services.ExamService, UpdateView);
-                subjectView.Show();
+                var subjectView = new AddEditExamView(Work.Add, ref exam, _services.ExamService, ReloadView);
+                subjectView.ShowDialog();
             }
             else
             {
-                ViewTools.GetOpenedForm<SubjectView>().Focus();
+                ViewTools.GetOpenedForm<ExamView>().Focus();
+                return;
             }
+            if (_subject.Exams is null) _subject.Exams = new List<ExamModel>();
+            _subject.Exams.Add(exam);
+
         }
 
         private void resourcesDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            resourceFileDialog.ShowDialog();
-
-            if (_subject.Resources is null) _subject.Resources = new List<string>();
-            _subject.Resources.Add(resourceFileDialog.FileName);
-            UpdateView();
-        }
+            => AddResource();
 
         private void saveButton_Click(object sender, EventArgs e)
         {
@@ -140,11 +155,6 @@ namespace ElearningApp
             MessageBox.Show("Η βάση ενημερώθηκε επιτυχώς.", "Ενημέρωση βάσης", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Invoke(_updateParent);
             this.Close();
-        }
-
-        private void examsDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void resourcesDGV_KeyDown(object sender, KeyEventArgs e)

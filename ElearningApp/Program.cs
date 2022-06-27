@@ -36,9 +36,9 @@ namespace ElearningApp
                 return;
             }
 //15/6
-            //TODO - CRUD Subject
-            //TODO - CRUD Course
-            //TODO - CRUD Questions
+            //TODO - CRUD Subject   OK
+            //TODO - CRUD Course    OK
+            //TODO - CRUD Questions 
                 //FreeForm
                 //Match
                 //MultipleChoice

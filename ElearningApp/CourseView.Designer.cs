@@ -33,28 +33,29 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.descriptionLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.teachersLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.courseNameLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.editCourseButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
             this.descriptionContentLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.subjectsLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.materialLabel1 = new MaterialSkin2DotNet.Controls.MaterialLabel();
+            this.descriptionLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.subjectsLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
+            this.subjectsDGV = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.editCourseButton = new MaterialSkin2DotNet.Controls.MaterialFloatingActionButton();
+            this.teachersLabel = new MaterialSkin2DotNet.Controls.MaterialLabel();
+            this.examButton = new MaterialSkin2DotNet.Controls.MaterialButton();
+            this.SubName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectsDGV)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -122,65 +123,6 @@
             this.panel3.Size = new System.Drawing.Size(382, 135);
             this.panel3.TabIndex = 0;
             // 
-            // descriptionLabel
-            // 
-            this.descriptionLabel.AutoSize = true;
-            this.descriptionLabel.Depth = 0;
-            this.descriptionLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.descriptionLabel.Location = new System.Drawing.Point(16, 18);
-            this.descriptionLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(81, 19);
-            this.descriptionLabel.TabIndex = 0;
-            this.descriptionLabel.Text = "Περιγραφή";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.editCourseButton);
-            this.panel1.Controls.Add(this.teachersLabel);
-            this.panel1.Controls.Add(this.courseNameLabel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(788, 83);
-            this.panel1.TabIndex = 1;
-            // 
-            // teachersLabel
-            // 
-            this.teachersLabel.AutoSize = true;
-            this.teachersLabel.Depth = 0;
-            this.teachersLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.teachersLabel.Location = new System.Drawing.Point(23, 55);
-            this.teachersLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.teachersLabel.Name = "teachersLabel";
-            this.teachersLabel.Size = new System.Drawing.Size(130, 19);
-            this.teachersLabel.TabIndex = 1;
-            this.teachersLabel.Text = "teacher1, teacher2";
-            // 
-            // courseNameLabel
-            // 
-            this.courseNameLabel.AutoSize = true;
-            this.courseNameLabel.Depth = 0;
-            this.courseNameLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.courseNameLabel.Location = new System.Drawing.Point(23, 12);
-            this.courseNameLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.courseNameLabel.Name = "courseNameLabel";
-            this.courseNameLabel.Size = new System.Drawing.Size(96, 19);
-            this.courseNameLabel.TabIndex = 0;
-            this.courseNameLabel.Text = "Course Name";
-            // 
-            // editCourseButton
-            // 
-            this.editCourseButton.Depth = 0;
-            this.editCourseButton.Icon = global::ElearningApp.Properties.Resources.icons8_edit_24;
-            this.editCourseButton.Location = new System.Drawing.Point(713, 12);
-            this.editCourseButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.editCourseButton.Name = "editCourseButton";
-            this.editCourseButton.Size = new System.Drawing.Size(56, 56);
-            this.editCourseButton.TabIndex = 2;
-            this.editCourseButton.Text = "materialFloatingActionButton1";
-            this.editCourseButton.UseVisualStyleBackColor = true;
-            // 
             // descriptionContentLabel
             // 
             this.descriptionContentLabel.AutoSize = true;
@@ -193,12 +135,33 @@
             this.descriptionContentLabel.TabIndex = 1;
             this.descriptionContentLabel.Text = "Περιγραφή";
             // 
+            // descriptionLabel
+            // 
+            this.descriptionLabel.AutoSize = true;
+            this.descriptionLabel.Depth = 0;
+            this.descriptionLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.descriptionLabel.Location = new System.Drawing.Point(16, 18);
+            this.descriptionLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(81, 19);
+            this.descriptionLabel.TabIndex = 0;
+            this.descriptionLabel.Text = "Περιγραφή";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.examButton);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(3, 144);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(382, 135);
+            this.panel5.TabIndex = 1;
+            // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.panel4, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.subjectsDGV, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -207,6 +170,15 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.56029F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(388, 282);
             this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.subjectsLabel);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(382, 46);
+            this.panel4.TabIndex = 0;
             // 
             // subjectsLabel
             // 
@@ -221,48 +193,93 @@
             this.subjectsLabel.TabIndex = 2;
             this.subjectsLabel.Text = "Κεφάλαια";
             // 
-            // panel4
+            // subjectsDGV
             // 
-            this.panel4.Controls.Add(this.subjectsLabel);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(3, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(382, 46);
-            this.panel4.TabIndex = 0;
+            this.subjectsDGV.AllowUserToAddRows = false;
+            this.subjectsDGV.AllowUserToDeleteRows = false;
+            this.subjectsDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.subjectsDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.SubName,
+            this.subDescription});
+            this.subjectsDGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subjectsDGV.Location = new System.Drawing.Point(3, 55);
+            this.subjectsDGV.Name = "subjectsDGV";
+            this.subjectsDGV.ReadOnly = true;
+            this.subjectsDGV.RowHeadersVisible = false;
+            this.subjectsDGV.RowTemplate.Height = 25;
+            this.subjectsDGV.Size = new System.Drawing.Size(382, 224);
+            this.subjectsDGV.TabIndex = 1;
             // 
-            // dataGridView1
+            // panel1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(382, 224);
-            this.dataGridView1.TabIndex = 1;
+            this.panel1.Controls.Add(this.editCourseButton);
+            this.panel1.Controls.Add(this.teachersLabel);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(788, 83);
+            this.panel1.TabIndex = 1;
             // 
-            // materialLabel1
+            // editCourseButton
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(150, 46);
-            this.materialLabel1.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(87, 19);
-            this.materialLabel1.TabIndex = 2;
-            this.materialLabel1.Text = "Διαγωνίσμα";
+            this.editCourseButton.Depth = 0;
+            this.editCourseButton.Icon = global::ElearningApp.Properties.Resources.icons8_edit_24;
+            this.editCourseButton.Location = new System.Drawing.Point(713, 12);
+            this.editCourseButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.editCourseButton.Name = "editCourseButton";
+            this.editCourseButton.Size = new System.Drawing.Size(56, 56);
+            this.editCourseButton.TabIndex = 2;
+            this.editCourseButton.Text = "materialFloatingActionButton1";
+            this.editCourseButton.UseVisualStyleBackColor = true;
+            this.editCourseButton.Click += new System.EventHandler(this.editCourseButton_Click);
             // 
-            // panel5
+            // teachersLabel
             // 
-            this.panel5.Controls.Add(this.materialLabel1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(3, 144);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(382, 135);
-            this.panel5.TabIndex = 1;
+            this.teachersLabel.AutoSize = true;
+            this.teachersLabel.Depth = 0;
+            this.teachersLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.teachersLabel.Location = new System.Drawing.Point(17, 12);
+            this.teachersLabel.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.teachersLabel.Name = "teachersLabel";
+            this.teachersLabel.Size = new System.Drawing.Size(130, 19);
+            this.teachersLabel.TabIndex = 1;
+            this.teachersLabel.Text = "teacher1, teacher2";
+            // 
+            // examButton
+            // 
+            this.examButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.examButton.Density = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.examButton.Depth = 0;
+            this.examButton.HighEmphasis = true;
+            this.examButton.Icon = null;
+            this.examButton.Location = new System.Drawing.Point(145, 44);
+            this.examButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.examButton.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
+            this.examButton.Name = "examButton";
+            this.examButton.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.examButton.Size = new System.Drawing.Size(84, 36);
+            this.examButton.TabIndex = 0;
+            this.examButton.Text = "Εξέταση";
+            this.examButton.Type = MaterialSkin2DotNet.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.examButton.UseAccentColor = false;
+            this.examButton.UseVisualStyleBackColor = true;
+            // 
+            // SubName
+            // 
+            this.SubName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.SubName.DataPropertyName = "Name";
+            this.SubName.HeaderText = "Όνομα κεφαλαίου";
+            this.SubName.Name = "SubName";
+            this.SubName.ReadOnly = true;
+            this.SubName.Width = 118;
+            // 
+            // subDescription
+            // 
+            this.subDescription.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.subDescription.DataPropertyName = "Description";
+            this.subDescription.HeaderText = "Περιγραφή";
+            this.subDescription.Name = "subDescription";
+            this.subDescription.ReadOnly = true;
             // 
             // CourseView
             // 
@@ -273,7 +290,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "CourseView";
-            this.Text = "CourseView";
+            this.Text = "φασ";
             this.Load += new System.EventHandler(this.CourseForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -281,14 +298,14 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectsDGV)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,7 +316,6 @@
         private Panel panel2;
         private Panel panel1;
         private MaterialSkin2DotNet.Controls.MaterialLabel teachersLabel;
-        private MaterialSkin2DotNet.Controls.MaterialLabel courseNameLabel;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel3;
         private Panel panel3;
@@ -310,7 +326,9 @@
         private Panel panel4;
         private MaterialSkin2DotNet.Controls.MaterialLabel subjectsLabel;
         private Panel panel5;
-        private MaterialSkin2DotNet.Controls.MaterialLabel materialLabel1;
-        private DataGridView dataGridView1;
+        private DataGridView subjectsDGV;
+        private MaterialSkin2DotNet.Controls.MaterialButton examButton;
+        private DataGridViewTextBoxColumn SubName;
+        private DataGridViewTextBoxColumn subDescription;
     }
 }

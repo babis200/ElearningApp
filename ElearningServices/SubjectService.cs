@@ -38,5 +38,12 @@ namespace ElearningServices
         {
             return _subjectDatabase.GetAll();
         }
+        
+        public List<SubjectModel> GetFiltered(string subName)
+        {
+            return _subjectDatabase.GetFiltered(subName);
+        }
+
+        
     }
 }

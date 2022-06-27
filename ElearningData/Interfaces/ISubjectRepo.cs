@@ -14,5 +14,9 @@ namespace ElearningData.Interfaces
         SubjectModel Get(Guid id);
 
         List<SubjectModel> GetAll();
+
+        List<SubjectModel> GetFiltered(string subname);
+
+
     }
 }

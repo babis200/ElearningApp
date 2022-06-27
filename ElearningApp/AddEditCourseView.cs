@@ -61,9 +61,9 @@ namespace ElearningApp
             //Description
             descriptionMultiLineTextBox.Text = _course.Description;
             //Subjects
-            UpdateSuvbectsListBox();
+            UpdateSubjectsListBox();
         }
-        private void UpdateSuvbectsListBox()
+        private void UpdateSubjectsListBox()
         {
             if (_course.Subjects is null) return;
             foreach (var subject in _course.Subjects)
@@ -134,6 +134,7 @@ namespace ElearningApp
             }
             MessageBox.Show("Η βάση ενημερώθηκε επιτυχώς.", "Ενημέρωση βάσης", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Invoke(_updateParent);
+            this.Close();
         }
 
         private void addSubjectButton_Click(object sender, EventArgs e)
@@ -141,12 +142,15 @@ namespace ElearningApp
             if (!ViewTools.IsFormOpened<SubjectView>())
             {
                 var subjectView = new SubjectView(_services, UpdateView);
-                subjectView.Show();
+                subjectView.ShowDialog();
+                if (_course.Subjects is null) _course.Subjects = new List<SubjectModel>();
+                _course.Subjects.Add(subjectView._selectedSubject);
             }
             else
             {
                 ViewTools.GetOpenedForm<SubjectView>().Focus();
             }
+            UpdateView();
         }
     }
 }
